@@ -1,0 +1,260 @@
+body {  
+  text-align: justify;  
+  font-size: small;  
+  font-family: Verdana;  
+  background-color: grey; 
+  
+}
+
+.Header {  
+  height: 85px;  
+  max-width: 1000px;  
+  min-width: 500px;  
+  background-color: white;
+  margin-left: auto;  
+  margin-right: auto;
+  
+}
+
+.Footer {  
+  height: 25px;  
+  max-width: 1000px;  
+  min-width: 500px;  
+  background-color: white;
+  margin-left: auto;  
+  margin-right: auto;
+  
+}
+
+.Header h1 {  
+  padding-right: 100px;  
+  font-size: 20px;  
+  color: #a6192e; 
+  letter-spacing: 1px;  
+  text-align: right;  
+  padding-top: 8px;  
+  font-family: verdana;
+}
+
+h1 {  
+    color: #a6192e;
+    font-family:verdana;
+}
+
+
+h2 {  
+    color: #a6192e;
+    font-family:verdana;
+}
+
+.Header h3 {  
+  padding-right: 100px;  
+  font-size: 10px;  
+  color: black;  
+  text-align: right;  
+  margin-top: -15px;  
+  font-family: Arial;  
+  font-style: italic;
+}
+h4 {  
+    color: #a6192e;
+    font-family:verdana;
+}
+
+.Header img {  
+  float: left;  
+  padding-left: 20px;  
+  padding-top: 5px;
+}
+
+.BodyContainer {  
+  max-width: 1000px;  
+  min-width: 1000px;  
+  margin-left: auto;  
+  margin-right: auto;  
+  background-color: white;  
+  margin-top: 10px;  
+  overflow: hidden;
+}
+
+.LeftPanel {  
+  float: left;  
+  top: 0px;  
+  left: 0px;  
+  width: 120px;  
+  min-height: 100%;  
+  background-color: white;
+
+}
+
+.RightPanel {  
+  float: right;  
+  right: 0px;  
+  padding-left: 10px;  
+  padding-right: 10px;  
+  width: 80px;  
+  min-height: 100%;  
+  background-color: #cccccc;
+
+}
+
+.MiddlePanel {  
+  float: left;  
+  background-color: white;  
+  margin-left: 10px;  
+  padding-left: 10px;  
+  padding-right: 10px;  
+  padding-top: 0px;  
+  max-width: 750px;  
+  min-width: 450px;  
+  text-align: left;  
+  font-family: Verdana;
+}
+
+.LeftPanel_alt {  
+  float: left;  
+  top: 0px;  
+  left: 0px;  
+  width: 120px;  
+  min-height: 220px;  
+  background-color: ;
+}
+
+.RightPanel_alt { 
+  float: right;
+  right: 0px;  
+  padding-top: 0px;  
+  padding-right: 20px;  
+  padding-bottom: 20px;  
+  padding-left: 20px;  
+  width: 260px;  
+  background-color: white;  
+  margin-right: 0px;  
+  min-height: 220px;
+}
+
+.MiddlePanel_alt {  
+  float: left;
+  margin-left: 10px;  
+  background-color: white;  
+  padding-left: 10px;  
+  padding-right: 10px;  
+  padding-top: 0px;  
+  min-width: 370px;  
+  font-family: Arial;  
+  min-height: 220px;
+}
+
+#RefList {
+}
+
+#RefList h3 {  
+  color: #6633ff;  
+  padding-top: 8px;
+}
+
+#RefList li {  
+  margin-bottom: 8px;
+}
+
+#CourseList {
+}
+
+#CourseList h3 {  
+  color: #6633ff;  
+  font-style: italic;
+}
+
+#CourseList ul {  
+  margin-top: -6px;
+}
+
+#CourseList td {  
+  vertical-align: top;  
+  text-align: left;
+}
+
+#ResearchTopics {
+}
+
+#ResearchTopics h3 {  
+  color: #6633ff;  
+  padding-top: 8px;
+}
+
+.Semester {  
+  font-weight: bold;
+}
+
+.CourseNo {  
+  color: #336666;  
+  font-style: italic;
+}
+
+.Title {  
+  font-weight: bold;
+}
+
+.Authors {
+}
+
+.Student {  
+  text-decoration: underline;
+}
+
+.Journal {  
+  font-style: italic;
+}
+
+.Volume {  
+  font-weight: bold;
+}
+
+a.DOI {  
+  text-decoration: none;  
+  color: #6633ff;
+}
+
+a.DOI:hover {  
+  text-decoration: underline;
+}
+
+a.PaperPDF {  
+  text-decoration: none;  
+  color: #6633ff;
+}
+
+a.PaperPDF:hover {  
+  text-decoration: underline;
+}
+
+.Menu {  
+  padding-top: 60px;  
+  font-family: Tahoma, Arial;  
+  font-size: medium;  
+  margin-left: -10px;  
+  font-variant: small-caps;
+}
+
+.Menu ul {  
+  list-style-type: none;  
+  color: #660000;
+}
+
+.Menu a {  
+  text-decoration: none;  
+  color: #660000;
+}
+
+.Menu a:hover {  
+  text-decoration: underline;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
