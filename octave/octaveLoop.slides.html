@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>octaveBasic slides</title>
+<title>octaveLoop slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11830,11 +11830,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="GNU-Octave-"><a href="https://www.gnu.org/software/octave/">GNU Octave </a><a class="anchor-link" href="#GNU-Octave-">&#182;</a></h2><ul>
-<li> A high-level interpreted language </li>
-<li> primarily uses for numerical computations </li> 
-<li> a tool of data visualization and manipulation </li> 
-<li> Octave language is quite similar to Matlab </li> </ul>
+<h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11843,16 +11839,23 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Basic-Operations">Basic Operations<a class="anchor-link" href="#Basic-Operations">&#182;</a></h2>
+<h3 id="Fibonacci-Sequence">Fibonacci Sequence<a class="anchor-link" href="#Fibonacci-Sequence">&#182;</a></h3><p>$F_1 = 1$, $F_2 = 1$ and $F_i = F_{i-1} + F_{i-2}$, $i = 3, 4, ...$</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="mi">5</span><span class="o">+</span><span class="mi">7</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">n</span><span class="p">=</span><span class="mi">20</span><span class="p">;</span>
+<span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">3</span><span class="p">:</span><span class="n">n</span>
+    <span class="n">F</span><span class="p">(</span><span class="n">i</span><span class="p">)=</span><span class="n">F</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">end</span>
+<span class="n">F</span>
 </pre></div>
 
 </div>
@@ -11865,7 +11868,16 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  12
+<pre>F =
+
+ Columns 1 through 11:
+
+      1      1      2      3      5      8     13     21     34     55     89
+
+ Columns 12 through 20:
+
+    144    233    377    610    987   1597   2584   4181   6765
+
 </pre>
 </div>
 </div>
@@ -11876,10 +11888,19 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="mi">6</span><span class="o">/</span><span class="mi">4</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
+<span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">n</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">F</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="k">while</span> <span class="n">n</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">10</span>
+    <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="p">)=</span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">n</span><span class="p">=</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="n">F</span>
 </pre></div>
 
 </div>
@@ -11892,384 +11913,10 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  1.5000
-</pre>
-</div>
-</div>
+<pre>F =
 
-</div>
-</div>
+    1    1    2    3    5    8   13   21   34   55
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans = -1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="mi">2</span>^<span class="mi">4</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  16
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  25
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">sin</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans = -0.95892
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">cos</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  0.28366
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">tan</span><span class="p">(</span><span class="nb">pi</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =   -1.2246e-16
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">pi</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  3.1416
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">format</span> <span class="n">long</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">pi</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  3.14159265358979
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">format</span> <span class="n">short</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  2.7183
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">log</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">sinh</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  27.290
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">tanh</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =  0.99505
 </pre>
 </div>
 </div>
@@ -12283,16 +11930,20 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="vector-and-matrix">vector and matrix<a class="anchor-link" href="#vector-and-matrix">&#182;</a></h1>
+<p>A simple while loop</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">x</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">10</span>
+    <span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="k">end</span>
 </pre></div>
 
 </div>
@@ -12305,467 +11956,11 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>x =
-
-   1   2
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">y</span><span class="p">=[</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>y =
-
-   3
-   4
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">y</span><span class="o">&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   3   4
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   4   5
-   5   6
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>x =
-
-   1   2
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">y</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>y =
-
-   3
-   4
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span><span class="o">.*</span><span class="n">y</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   3   6
-   4   8
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">y</span><span class="p">=[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>y =
-
-   3   4
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span><span class="o">+</span><span class="n">y</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   4   6
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A =
-
-   1   2
-   3   4
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">B</span> <span class="p">=</span> <span class="p">[</span><span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>B =
-
-   5   6
-   7   8
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">C</span><span class="p">=</span><span class="n">B</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>C =
-
-  -4.0000   3.0000
-   3.5000  -2.5000
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">C</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   3.00000  -2.00000
-   2.00000  -1.00000
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">B</span><span class="o">*</span><span class="n">C</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   1.00000   0.00000
-   0.00000   1.00000
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">inv</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-  -4.0000   3.0000
-   3.5000  -2.5000
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">det</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans = -2.0000
+<pre>x =  1
+x =  2
+x =  4
+x =  8
+x =  16
 </pre>
 </div>
 </div>
@@ -12779,7 +11974,17 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">eigvector</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">];</span>
+<span class="n">B</span><span class="p">=[</span><span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span><span class="p">;</span><span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span><span class="p">;</span><span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">];</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;sum of two matrices without loop&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">+</span><span class="n">B</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)=</span><span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;sum of two matrices using for loop&#39;</span><span class="p">)</span>
+<span class="n">C</span>
 </pre></div>
 
 </div>
@@ -12792,88 +11997,19 @@ a.anchor-link {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>error: &#39;eigvector&#39; undefined near line 1 column 1
-</pre>
-</div>
-</div>
+<pre>sum of two matrices without loop
+ans =
 
-</div>
-</div>
+    6    8   10
+   12   14    6
+   10   12   14
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">help</span> <span class="nb">eig</span>
-</pre></div>
+sum of two matrices using for loop
+C =
 
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&#39;eig&#39; is a built-in function from the file libinterp/corefcn/eig.cc
-
- -- Built-in Function: LAMBDA = eig (A)
- -- Built-in Function: LAMBDA = eig (A, B)
- -- Built-in Function: [V, LAMBDA] = eig (A)
- -- Built-in Function: [V, LAMBDA] = eig (A, B)
-     Compute the eigenvalues (and optionally the eigenvectors) of a
-     matrix or a pair of matrices
-
-     The algorithm used depends on whether there are one or two input
-     matrices, if they are real or complex, and if they are symmetric
-     (Hermitian if complex) or non-symmetric.
-
-     The eigenvalues returned by &#39;eig&#39; are not ordered.
-
-     See also: eigs, svd.
-
-Additional help for built-in functions and operators is
-available in the online version of the manual.  Use the command
-&#39;doc &lt;topic&gt;&#39; to search the manual index.
-
-Help and information about Octave is also available on the WWW
-at http://www.octave.org and via the help@octave.org
-mailing list.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">98</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A =
-
-    1    2    3
-    4    5    6
-    7    8   98
+    6    8   10
+   12   14    6
+   10   12   14
 
 </pre>
 </div>
@@ -12888,19 +12024,30 @@ mailing list.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$a_{1,1} \quad   a_{1,2}  \quad  a_{1,3}$</p>
-<p>$a_{2,1} \quad   a_{2,2}  \quad  a_{2,3}$</p>
-<p>$a_{3,1} \quad   a_{3,2}  \quad  a_{3,3}$</p>
-
+<h2 id="Matrix-multiplication">Matrix multiplication<a class="anchor-link" href="#Matrix-multiplication">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">];</span>
+<span class="n">B</span><span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">6</span> <span class="mi">5</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">9</span> <span class="mi">8</span> <span class="mi">7</span><span class="p">];</span>
+<span class="n">C</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Matrix multiplication without loop&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+       <span class="c">% C(i,j)=0;</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span>
+            <span class="n">C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)=</span><span class="n">C</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">+</span><span class="n">A</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">j</span><span class="p">);</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Matrix multiplication using for loop&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12913,229 +12060,14 @@ mailing list.
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-    3
-    6
-   98
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>ans =
-
-   3   3
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A =
-
-   0   0   0
-   0   0   0
-   0   0   0
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A =
-
-Diagonal Matrix
-
-   1   0   0   0
-   0   1   0   0
-   0   0   1   0
-   0   0   0   1
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=</span><span class="nb">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>A =
-
-   0.606503   0.597362   0.178119   0.201635
-   0.014751   0.846308   0.691897   0.922273
-   0.349956   0.439387   0.119390   0.155776
-   0.497024   0.502699   0.021477   0.264057
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x1</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">100</span>^<span class="mi">2</span> <span class="o">-</span><span class="mi">60</span>^<span class="mi">2</span><span class="p">)</span>
-<span class="n">x1</span><span class="o">*</span><span class="mi">15</span><span class="o">*</span><span class="p">(</span><span class="mi">60</span>^<span class="mi">2</span> <span class="o">+</span> <span class="n">x1</span>^<span class="mi">2</span><span class="p">)</span>^<span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>x1 =  80
-ans =  12
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="c">%plot gnuplot</span>
-<span class="n">plottest</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Solve the linear system $Ax =b$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">];</span>
-<span class="n">b</span><span class="p">=[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">];</span>
-<span class="n">x</span><span class="p">=</span><span class="n">A</span><span class="o">\</span><span class="n">b</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>x =
-
-  -0.50000
-   1.50000
-  -0.50000
-
+<pre>Matrix multiplication without loop
+    42    36    30
+    96    81    66
+   150   126   102
+Matrix multiplication using for loop
+    42    36    30
+    96    81    66
+   150   126   102
 </pre>
 </div>
 </div>
@@ -13149,10 +12081,161 @@ ans =  12
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Matrix multiplication</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Find factorial $n! = 1. 2. 3. ... (n-1)n$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="n">n</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">f</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+    <span class="n">f</span><span class="p">=</span><span class="n">f</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+    <span class="n">i</span><span class="p">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;using for loop&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">f1</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="p">=</span><span class="n">n</span>
+    <span class="n">f1</span><span class="p">=</span><span class="n">f1</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+    <span class="n">i</span><span class="p">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;using while loop&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>using for loop
+ 120
+using while loop
+ 120
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="k">function</span><span class="w"> </span>f <span class="p">=</span><span class="w"> </span><span class="nf">fact</span><span class="p">(</span>n<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">f</span> <span class="p">=</span> <span class="nb">prod</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">);</span>
+<span class="k">endfunction</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ans =  120
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fixed point iteration,
+$x = \phi(x)$, $x_n =\phi(x_{n-1})$. 
+For example $x = cosh(x/4)$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Fixed point iteration&#39;</span><span class="p">);</span>
+<span class="n">phi</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">x</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">er</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">k</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">((</span><span class="n">er</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="n">xnew</span> <span class="p">=</span> <span class="n">phi</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">er</span> <span class="p">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xnew</span><span class="o">-</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">x</span> <span class="p">=</span> <span class="n">xnew</span><span class="p">;</span>
+    <span class="n">k</span> <span class="p">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="k">end</span>
+<span class="n">x</span>
+<span class="n">k</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Fixed point iteration
+x =  1.0336
+k =  7
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
