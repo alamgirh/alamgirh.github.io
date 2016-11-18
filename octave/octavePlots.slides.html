@@ -11843,8 +11843,13 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
+<span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 <span class="nb">plot</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">sin</span> <span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x-axis&#39;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y-axis&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Sine function&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -11857,16 +11862,18 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/sineplt.png" alt="Plot 2d" style="width:400px;height:300px;"></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 <span class="n">y1</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span>
 <span class="n">y2</span> <span class="p">=</span> <span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="p">;</span>
@@ -11879,8 +11886,9 @@ a.anchor-link {
 <span class="nb">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;x-axis&#39;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;y-axis&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Power Functions Plots&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Power Functions Plots&#39;</span><span class="p">)</span>
 <span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&#39;y = x&#39;</span><span class="p">,</span><span class="s">&#39;y = x^2&#39;</span><span class="p">,</span><span class="s">&#39;y = x^3&#39;</span><span class="p">)</span>
 <span class="nb">hold</span> <span class="n">off</span>
 </pre></div>
 
@@ -11889,12 +11897,61 @@ a.anchor-link {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/powerplt.png" alt="Plot 2d" style="width:400px;height:300px;"></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="n">ty</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span><span class="o">&#39;</span><span class="p">;</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
+<span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="n">y1</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y2</span> <span class="p">=</span> <span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y3</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y4</span> <span class="p">=</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y4</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">(</span><span class="s">&#39;equal&#39;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/subplt.png" alt="Plot 2d" style="width:600px;height:400px;"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="n">ty</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
 <span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">);</span>
 <span class="n">r</span> <span class="p">=</span> <span class="nb">sqrt</span> <span class="p">(</span><span class="n">xx</span> <span class="o">.^</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">.^</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">eps</span><span class="p">;</span>
 <span class="n">tz</span> <span class="p">=</span> <span class="nb">sin</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">./</span> <span class="n">r</span><span class="p">;</span>
@@ -11907,10 +11964,17 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">mesh</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">mesh</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">surf</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">contour</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11918,18 +11982,15 @@ a.anchor-link {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">surf</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/plot2d.png" alt="Plot 2d" style="width:600px;height:400px;"></p>
 
 </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
