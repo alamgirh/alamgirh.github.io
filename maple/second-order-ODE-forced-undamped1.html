@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>second-order-ODE-forced-undamped1.html</title>
+<!-- Created by Maple 18.02, Linux -->
+</head>
+<a name="MapleAutoBookmark1" />
+
+<body bgcolor="FFFFFF">
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Forced, undamped vibrations and "beating".</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>restart;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>ode := diff(u(t),t$2) + u(t) = 0.5*cos(0.9*t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_1.gif" width="235" height="34" alt="`+`(diff(diff(u(t), t), t), u(t)) = `+`(`*`(.5, `*`(cos(`+`(`*`(.9, `*`(t)))))))" align="center" border="0"></td>
+<td width='5%' align='center'>(1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>soln := dsolve( {ode, u(0)=0, D(u)(0)=0} );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_2.gif" width="263" height="30" alt="u(t) = `+`(`-`(`*`(`/`(50, 19), `*`(cos(t)))), `*`(`/`(50, 19), `*`(cos(`+`(`*`(`/`(9, 10), `*`(t)))))))" align="center" border="0"></td>
+<td width='5%' align='center'>(2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Notice the "beats" in the plot below for the case of forcing frequency omega=0.9.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>plot( rhs(soln), t=0..125 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_3.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Plot solutions for several values of the forcing frequency omega between 0 and 3.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>solnlist := NULL:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>for omega in [0, 1.1, 2, 3] do</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong> &nbsp;&nbsp;ode := diff(u(t),t$2) + u(t) = cos(omega*t):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong> &nbsp;&nbsp;solnlist := solnlist, rhs( dsolve( {ode, u(0)=2, D(u)(0)=3} ) ):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>od:</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>plot( [solnlist], t=0..125, legend=['\omega=0', '\omega=1.1', '\omega=2',  '\omega=3'] );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_4.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Solve and plot the resonant case, when the forcing frequency is equal to the natural frequency. &nbsp;In the absence of damping, the solution amplitude grows without bound. &nbsp;&nbsp;Notice the resonant term of the form t*sin(t). &nbsp;</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>ode := diff(u(t),t$2) + u(t) = 0.5*cos(t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_5.gif" width="214" height="34" alt="`+`(diff(diff(u(t), t), t), u(t)) = `+`(`*`(.5, `*`(cos(t))))" align="center" border="0"></td>
+<td width='5%' align='center'>(3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>soln := dsolve( {ode, u(0)=0, D(u)(0)=0} );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_6.gif" width="151" height="30" alt="u(t) = `+`(`*`(`/`(1, 4), `*`(sin(t), `*`(t))))" align="center" border="0"></td>
+<td width='5%' align='center'>(4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>plot( rhs(soln), t=0..100 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/second-order-ODE-forced-undamped_7.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+</body>
+</html>

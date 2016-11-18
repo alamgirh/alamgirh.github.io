@@ -1,0 +1,259 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>solve-first-order-ODE-system1.html</title>
+<!-- Created by Maple 18.02, Linux -->
+</head>
+<a name="MapleAutoBookmark1" />
+
+<body bgcolor="FFFFFF">
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>restart;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>with(DEtools):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Solve the system of first order linear differential equations.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Example 1: &nbsp;Plot the solution to y'' + 3y' +2y = 0, first as individual components (y(t) and y'(t) versus t) </font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">and then the phase field plot (y vs y') including direction field arrows.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>ode1:= diff(y(t),t$2) + 3*diff(y(t),t) + 2*y(t) = 0;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_1.gif" width="270" height="34" alt="`+`(diff(diff(y(t), t), t), `*`(3, `*`(diff(y(t), t))), `*`(2, `*`(y(t)))) = 0" align="center" border="0"></td>
+<td width='5%' align='center'>(1)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font><font color="#ff0000" size="3" face="Courier New"><strong>soln1 := dsolve( {ode1} );</strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_2.gif" width="216" height="16" alt="{y(t) = `+`(`*`(_C1, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))), `*`(_C2, `*`(exp(`+`(`-`(t))))))}" align="center" border="0"></td>
+<td width='5%' align='center'>(2)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>ode2:= D(x)(t)=y(t), D(y)(t)=-2*x(t)-3*y(t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_3.gif" width="299" height="14" alt="(D(x))(t) = y(t), (D(y))(t) = `+`(`-`(`*`(2, `*`(x(t)))), `-`(`*`(3, `*`(y(t)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(3)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>soln2 := dsolve( {ode2} );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_4.gif" width="387" height="16" alt="{x(t) = `+`(`*`(_C1, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))), `*`(_C2, `*`(exp(`+`(`-`(t)))))), y(t) = `+`(`-`(`*`(2, `*`(_C1, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))))), `-`(`*`(_C2, `*`(exp(`+`(`-`(t)))))))}" align="center" border="0"></td>
+<td width='5%' align='center'>(4)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>y1 := c1*exp(-t) + c2*exp(-2*t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_5.gif" width="129" height="16" alt="`+`(`*`(c1, `*`(exp(`+`(`-`(t))))), `*`(c2, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))))" align="center" border="0"></td>
+<td width='5%' align='center'>(5)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>y2 := -c1*exp(-t) - 2*c2*exp(-2*t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_6.gif" width="148" height="16" alt="`+`(`-`(`*`(c1, `*`(exp(`+`(`-`(t)))))), `-`(`*`(2, `*`(c2, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))))))" align="center" border="0"></td>
+<td width='5%' align='center'>(6)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>plot( subs({c1=1, c2=2}, [y1, y2]), t=-3..3, legend=['y1', 'y2'] );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_7.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">y'' + 3y' +2y = 0</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Equivalent first order ODE system is:</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_8.gif" width="64" height="30" alt="`/`(`*`(dx), `*`(dt)) = y" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_9.gif" width="105" height="30" alt="`/`(`*`(dy), `*`(dt)) = `+`(`-`(`*`(2, `*`(x))), `-`(`*`(3, `*`(y))))" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>ode2:= D(x)(t)=y(t), D(y)(t)=-2*x(t)-3*y(t);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_10.gif" width="299" height="14" alt="(D(x))(t) = y(t), (D(y))(t) = `+`(`-`(`*`(2, `*`(x(t)))), `-`(`*`(3, `*`(y(t)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(7)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>soln2 := dsolve( {ode2} );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_11.gif" width="387" height="16" alt="{x(t) = `+`(`*`(_C1, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))), `*`(_C2, `*`(exp(`+`(`-`(t)))))), y(t) = `+`(`-`(`*`(2, `*`(_C1, `*`(exp(`+`(`-`(`*`(2, `*`(t))))))))), `-`(`*`(_C2, `*`(exp(`+`(`-`(t)))))))}" align="center" border="0"></td>
+<td width='5%' align='center'>(8)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>DEplot( [D(x)(t)=y(t), D(y)(t)=-2*x(t)-3*y(t)], [x(t), y(t)], t=-3..3, x=-3..3, y=-2..2 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_12.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Add some solution curves by providing a list of 4 different initial conditions.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>phaseportrait( [D(x)(t)=y(t), D(y)(t)=-2*x(t) -3*y(t)], [x(t), y(t)], t=-1..10, [[x(0)=1,y(0)=1], [x(0)=2,y(0)=2], [x(0)=-1,y(0)=1], [x(0)=-1,y(0)=-1]], linecolor='blue' );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_13.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Example 2: </font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_14.gif" width="171" height="75" alt="Vector[column](%id = 18446884039438978214) = Typesetting:-delayDotProduct(Matrix(%id = 18446884039438978334), Vector[column](%id = 18446884039438978454), true)" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>DEplot( [D(x)(t) = -1/2*x(t) - 1/2*y(t), D(y)(t) = 3/2*x(t) - 5/2*y(t)], [x(t),y(t)], t=-3..3, x=-3..3, y=-2..2 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_15.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Example 2: Continue</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_16.gif" width="171" height="75" alt="Vector[column](%id = 18446884039438971118) = Typesetting:-delayDotProduct(Matrix(%id = 18446884039438971358), Vector[column](%id = 18446884039438971478), true)" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>with(LinearAlgebra):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>Eigenvalues([[-1/(2),- (1)/(2)],[3/2,-(5)/(2)]]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_17.gif" width="40" height="43" alt="Vector[column](%id = 18446884039423920358)" align="center" border="0"></td>
+<td width='5%' align='center'>(9)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Eigenvalues are distinct real. So, (0, 0) a stable node.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>phaseportrait( [D(x)(t) = -1/2*x(t) - 1/2*y(t), D(y)(t) = 3/2*x(t) - 5/2*y(t)], [x(t),y(t)], t=-2..10, [[x(0)=1,y(0)=3], [x(0)=0,y(0)=-2], [x(0)=-2,y(0)=0], [x(0)=2,y(0)=0]], x=-3..3, y=-3..3, linecolor='blue' );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_18.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Example 2: Continue</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_19.gif" width="171" height="75" alt="Vector[column](%id = 18446884039438972558) = Typesetting:-delayDotProduct(Matrix(%id = 18446884039438972678), Vector[column](%id = 18446884039438972798), true)" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>Eigenvalues([[-1/(2),- (1)/(8)],[2,-(1)/(2)]]);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_20.gif" width="83" height="75" alt="Vector[column](%id = 18446884039423914822)" align="center" border="0"></td>
+<td width='5%' align='center'>(10)</td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman">Eigenvalues are complex with negative real part. So, this is a stable spiral.</font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>phaseportrait( [D(x)(t) = -1/2*x(t) - 1/8*y(t), D(y)(t) = 2*x(t) - 1/2*y(t)], [x(t),y(t)], t=-1..20, [[x(0)=2,y(0)=3], [x(0)=1,y(0)=1]], x=-4..4, y=-4..4, linecolor='blue' );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/solve-first-order-ODE-system_21.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>direction-field1.html</title>
+<!-- Created by Maple 18.02, Linux -->
+</head>
+<a name="MapleAutoBookmark1" />
+
+<body bgcolor="FFFFFF">
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>with(DEtools):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">Direction field plot: y'(x) - <img src="images/direction-field_1.gif" width="19" height="16" alt="exp(x)" align="center" border="0"> y = <img src="images/direction-field_2.gif" width="19" height="16" alt="exp(x)" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>dfieldplot( diff(y(x),x)-exp(x)*y(x)=exp(x), y(x), x=-4..4, y=-3..3 ); </td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/direction-field_3.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New">D</font><font color="#000000" size="3" face="Times">irection field and a few solution trajectories.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>DEplot( diff(y(x),x)-exp(x)*y(x)=exp(x), y(x), x=-4..4, [[y(0)=1], [y(0)=-2], [y(0)=2], [y(0)=-3], [y(0)=0]], y=-3..3, linecolor=blue);</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/direction-field_4.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New"></font><font color="#000000" size="3" face="Times">Direction field plot: </font><font color="#000000" size="3" face="Times New Roman">y'(x) = <img src="images/direction-field_5.gif" width="45" height="34" alt="`/`(`*`(`^`(x, 2)), `*`(`+`(`-`(`*`(`^`(y, 2))), 1)))" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><img src="images/direction-field_6.gif" width="510" height="16" alt="DEplot(diff(y(x), x) = `/`(`*`(`^`(x, 2)), `*`(`+`(1, `-`(`*`(`^`(y(x), 2)))))), y(x), x = -3 .. 3, y = -4 .. 4); 1" align="center" border="0"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/direction-field_7.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+<td width='5%' align='center'></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">Direction field plot: y'(x) = <img src="images/direction-field_8.gif" width="61" height="32" alt="`+`(`/`(`*`(2, `*`(x)), `*`(`+`(`*`(`^`(x, 2), `*`(y)), y))))" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Courier New"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier New"><strong>dfieldplot( diff(y(x),x)=2*x/(y(x)+x^2*y(x)), y(x), x=-2..2, y=-2..2 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/direction-field_9.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier New"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+</body>
+</html>

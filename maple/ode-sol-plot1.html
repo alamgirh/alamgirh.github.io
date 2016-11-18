@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>ode-sol-plot1.html</title>
+<!-- Created by Maple 18.02, Linux -->
+</head>
+<a name="MapleAutoBookmark1" />
+
+<body bgcolor="FFFFFF">
+<p align="left"><font color="#000000" size="3" face="Times">An illustration of the various types of solutions plots that might be presented for the solution to an ODE.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>with(DEtools):</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark2" />
+<p align="left"><font color="#000000" size="5" face="Times New Roma"><strong></strong></font><font color="#000000" size="5" face="Courier"><strong>Example: Mixture Problems </strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_1.gif" width="190" height="30" alt="`/`(`*`(dQ), `*`(dt)) = `+`(6, `-`(`*`(`/`(3, 50), `*`(Q(t))))), Q(0) = Q__0" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="monospace"><strong>deq:=D(Q)(t)=6-3*Q(t)/50;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_2.gif" width="189" height="30" alt="(D(Q))(t) = `+`(6, `-`(`*`(`/`(3, 50), `*`(Q(t)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(1.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font><font color="#000000" size="3" face="Times">The ODE defines a direction field at each point in the t-Q plane, which can be plotted using 'dfieldplot'.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>dfieldplot( deq, Q(t), t=-20..50, Q=-100..200 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/ode-sol-plot_3.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">The general solution can be viewed as a family of integral curves, which can be plotted using 'DEplot'.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>DEplot( deq, Q(t), t=0..100, [[Q(0)=200], [Q(0)=100], [Q(0)=0]], Q=-5..300, arrows=NONE );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/ode-sol-plot_4.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">Here is how to solve an ODE for the general solution, and an IVP (with initial condition) for a particular solution.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>dsolve( deq, Q(t) );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_5.gif" width="147" height="28" alt="Q(t) = `+`(100, `*`(exp(`+`(`-`(`*`(`/`(3, 50), `*`(t))))), `*`(_C1)))" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>dsolve( [deq, Q(0)=0], Q(t) );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_6.gif" width="146" height="28" alt="Q(t) = `+`(100, `-`(`*`(100, `*`(exp(`+`(`-`(`*`(`/`(3, 50), `*`(t)))))))))" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">You can use 'plot' (or 'DEplot') to plot the particular solution.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>plot( rhs(%), t=0..200, 0..500 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/ode-sol-plot_7.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<dl style="margin-left:40px"><a name="MapleAutoBookmark3" />
+<p align="left"><font color="#000000" size="5" face="Times New Roma"><strong></strong></font><font color="#000000" size="5" face="Courier"><strong>Example: Population growth </strong></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_8.gif" width="196" height="32" alt="`/`(`*`(dy), `*`(dt)) = `+`(`/`(`*`(y), `*`(`^`(10, 2))), `-`(`/`(`*`(`^`(y, 2)), `*`(`^`(10, 8))))), y(0) = y__0" align="center" border="0"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="monospace"><strong>deq:=D(y)(t)=(1/100)*y(t) -(1/10^8)*y(t)^2;</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_9.gif" width="282" height="30" alt="(D(y))(t) = `+`(`*`(`/`(1, 100), `*`(y(t))), `-`(`*`(`/`(1, 100000000), `*`(`^`(y(t), 2)))))" align="center" border="0"></td>
+<td width='5%' align='center'>(2.1)</td>
+</tr>
+</table></font>&nbsp;</p>
+</dl>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font><font color="#000000" size="3" face="Times">The ODE defines a direction field at each point in the t-y plane, which can be plotted using 'dfieldplot'.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>dfieldplot( deq, y(t), t=0..500, y=-10^6..2*10^6 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/ode-sol-plot_10.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">The general solution can be viewed as a family of integral curves, which can be plotted using 'DEplot'.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Lucida Bright"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>DEplot( deq, y(t), t=0..1000, [[y(0)=10^3],[y(0)=10^5], [y(0)=10^6], [y(0)=2*10^6]], y=0..2*10^6, arrows=NONE );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/ode-sol-plot_11.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">Here is how to solve an ODE for the general solution, and an IVP (with initial condition) for a particular solution.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>dsolve( deq, y(t) );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_12.gif" width="193" height="44" alt="y(t) = `+`(`/`(`*`(1000000), `*`(`+`(1, `*`(1000000, `*`(exp(`+`(`-`(`*`(`/`(1, 100), `*`(t))))), `*`(_C1)))))))" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>dsolve( [deq, y(0)=10^4], y(t) );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#0000ff" size="3" face="Lucida Bright"><img src="images/ode-sol-plot_13.gif" width="132" height="44" alt="y(t) = `+`(`/`(`*`(1000000), `*`(`+`(1, `*`(99, `*`(exp(`+`(`-`(`*`(`/`(1, 100), `*`(t)))))))))))" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times">You can use 'plot' (or 'DEplot') to plot the particular solution.</font>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times"></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="monospace"><strong>&gt; </strong></font></td>
+<td valign="top"><font color="#ff0000" size="3" face="Courier"><strong>plot( rhs(%), t=0..2000, 0..10^6 );</td>
+</tr>
+</table></strong></font>&nbsp;</p>
+<p align="center"><table width='100%'>
+<tr>
+<td valign="top" align="center"><font color="#000000" size="3" face="Times New Roman"><img src="images/ode-sol-plot_14.gif" width="400" height="400" alt="Plot_2d" align="center" border="0"></td>
+</tr>
+</table></font>&nbsp;</p>
+<p align="left"><table>
+<tr>
+<td valign="top" align="center"><font color="#ff0000" size="3" face="Courier"><strong>&gt; </strong></font></td>
+<td valign="top"></td>
+</tr>
+</table>&nbsp;</p>
+<p align="left"><font color="#000000" size="3" face="Times New Roman"></font>&nbsp;</p>
+</body>
+</html>
