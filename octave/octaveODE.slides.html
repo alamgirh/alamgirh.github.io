@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>octaveComplex slides</title>
+<title>octaveODE slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11830,13 +11830,16 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Complex-Function">Complex Function<a class="anchor-link" href="#Complex-Function">&#182;</a></h1>
+<h2 id="Solve-the-first-order-differential-equations">Solve the first order differential equations<a class="anchor-link" href="#Solve-the-first-order-differential-equations">&#182;</a></h2><p>$\frac{dy}{dt} = f(t,y)$, $y(t_0) = y_0$ and $a \le t \le b$.</p>
+<p>For example,
+$\frac{dy}{dt} = -5 t y^2+\frac{5}{t}-\frac{1}{t^2}$, $y(0) = 1$ and $1 \le t \le 25$</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%plot gnuplot</span>
@@ -11849,61 +11852,223 @@ a.anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="k">function</span><span class="w"> </span>[y]<span class="p">=</span><span class="nf">forwardeuler</span><span class="p">(</span>a, b,h, y0, f<span class="p">)</span><span class="w"></span>
+<span class="c">% function [y]=forwardeuler(a, b,h, y0, f)</span>
+<span class="c">% Forward Euler Method</span>
+<span class="c">% end points a and b</span>
+<span class="c">% time step h	</span>
+<span class="c">% initial condition y0</span>
+<span class="c">% input function f</span>
+
+<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">y0</span><span class="p">;</span>
+
+<span class="n">t</span><span class="p">=</span><span class="n">a</span> <span class="p">:</span> <span class="n">h</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">n</span><span class="p">=</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="k">function</span><span class="w"> </span>[ y ] <span class="p">=</span><span class="w"> </span><span class="nf">rk4</span><span class="p">(</span> a,b,h,y0, f<span class="p">)</span><span class="w"></span>
+<span class="c">% function [ y ] = rk4( a,b,h,y0, f)</span>
+<span class="c">% Runge-Kutta fourth order method</span>
+<span class="c">% end points a and b</span>
+<span class="c">% time step h	</span>
+<span class="c">% initial condition y0</span>
+<span class="c">% input function f</span>
+
+<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="n">y0</span><span class="p">;</span>
+
+<span class="n">t</span><span class="p">=</span><span class="n">a</span> <span class="p">:</span> <span class="n">h</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">n</span><span class="p">=</span><span class="nb">length</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">f1</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+    <span class="n">Y2</span><span class="p">=</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">f1</span><span class="p">;</span>
+    <span class="n">f2</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">Y2</span><span class="p">);</span>
+    <span class="n">Y3</span><span class="p">=</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">f2</span><span class="p">;</span>
+    <span class="n">f3</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">Y3</span><span class="p">);</span>
+    <span class="n">Y4</span><span class="p">=</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">f3</span><span class="p">;</span>
+    <span class="n">f4</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">Y4</span><span class="p">);</span>
+    <span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">f1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">f2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">f3</span><span class="o">+</span><span class="n">f4</span><span class="p">);</span>
+<span class="k">end</span>
+
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="nb">all</span>
-<span class="n">Lx</span> <span class="p">=</span> <span class="mf">4.0</span><span class="p">;</span>  <span class="n">Ly</span> <span class="p">=</span> <span class="mf">4.0</span><span class="p">;</span>
-<span class="n">dx</span> <span class="p">=</span> <span class="mf">0.1</span><span class="p">;</span>
-<span class="n">x</span> <span class="p">=</span> <span class="o">-</span><span class="n">Lx</span><span class="p">:</span><span class="n">dx</span><span class="p">:</span><span class="n">Lx</span><span class="p">;</span>
-<span class="n">y</span> <span class="p">=</span> <span class="o">-</span><span class="n">Ly</span><span class="p">:</span><span class="n">dx</span><span class="p">:</span><span class="n">Ly</span><span class="p">;</span>
+<span class="n">h</span><span class="p">=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">b</span><span class="p">=</span><span class="mi">25</span><span class="p">;</span>
+<span class="n">y0</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">f</span><span class="p">=@(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">y</span>^<span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">t</span>^<span class="mi">2</span><span class="p">);</span>
 
-<span class="p">[</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-<span class="n">zz</span> <span class="p">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="mi">1</span><span class="n">i</span><span class="o">*</span><span class="n">yy</span><span class="p">;</span>  <span class="c">%%%Up to this point the complex mesh is created</span>
-<span class="n">phi</span><span class="p">=</span><span class="nb">log</span><span class="p">(</span><span class="n">zz</span><span class="p">);</span>
+<span class="p">[</span><span class="n">y1</span><span class="p">]</span> <span class="p">=</span> <span class="n">forwardeuler</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+<span class="p">[</span><span class="n">y2</span><span class="p">]</span> <span class="p">=</span> <span class="n">rk4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
 
-<span class="nb">figure</span><span class="p">(</span><span class="mi">1001</span><span class="p">)</span>
-<span class="nb">surf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="n">Lx</span> <span class="n">Lx</span> <span class="o">-</span><span class="n">Ly</span> <span class="n">Ly</span><span class="p">])</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Surface plot of Re(log(z))&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-<span class="nb">print</span> <span class="o">-</span><span class="n">dpng</span> <span class="n">a</span><span class="p">.</span><span class="n">png</span>
+<span class="n">t</span><span class="p">=</span><span class="n">a</span> <span class="p">:</span> <span class="n">h</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">t1</span><span class="p">=</span><span class="n">a</span> <span class="p">:</span> <span class="n">h</span><span class="o">*</span><span class="mi">10</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">yexact</span><span class="p">=@(</span><span class="n">t</span><span class="p">)</span> <span class="mf">1.</span><span class="o">/</span><span class="n">t</span><span class="p">;</span>
 
-<span class="nb">figure</span><span class="p">(</span><span class="mi">1002</span><span class="p">)</span>
-<span class="n">zz</span> <span class="p">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="mi">1</span><span class="n">i</span><span class="o">*</span><span class="n">yy</span><span class="p">;</span>  <span class="c">%%%Up to this point the complex mesh is created</span>
-<span class="nb">surf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="nb">imag</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="n">Lx</span> <span class="n">Lx</span> <span class="o">-</span><span class="n">Ly</span> <span class="n">Ly</span><span class="p">])</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Surface plot of Im(log(z))&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-<span class="nb">print</span> <span class="o">-</span><span class="n">dpng</span> <span class="n">b</span><span class="p">.</span><span class="n">png</span>
+<span class="nb">figure</span><span class="p">;</span>
 
-<span class="n">contn</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c">%How may contours you want to plot?</span>
-<span class="c">%  imag part </span>
-<span class="nb">figure</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>  <span class="nb">clf</span><span class="p">;</span>
-<span class="nb">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="nb">imag</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="n">contn</span><span class="p">);</span>  <span class="nb">hold</span> <span class="n">on</span>
-<span class="nb">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="n">contn</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>  
-<span class="nb">hold</span> <span class="n">off</span>
-<span class="nb">colorbar</span>
-<span class="nb">axis</span> <span class="n">equal</span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="n">Lx</span> <span class="n">Lx</span> <span class="o">-</span><span class="n">Ly</span> <span class="n">Ly</span><span class="p">])</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;contours of Im(log(z))&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
-<span class="nb">print</span> <span class="o">-</span><span class="n">dpng</span> <span class="n">c</span><span class="p">.</span><span class="n">png</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">yexact</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span><span class="s">&#39;o&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Forward Euler&#39;</span><span class="p">)</span>
 
-<span class="c">%  real part</span>
-<span class="nb">figure</span><span class="p">(</span><span class="mi">22</span><span class="p">);</span>  <span class="nb">clf</span><span class="p">;</span>
-<span class="nb">contourf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="nb">real</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="n">contn</span><span class="p">);</span>  <span class="nb">hold</span> <span class="n">on</span>
-<span class="nb">contour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="nb">imag</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span><span class="n">contn</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>  
-<span class="nb">colorbar</span>
-<span class="nb">axis</span> <span class="n">equal</span>
-<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="n">Lx</span> <span class="n">Lx</span> <span class="o">-</span><span class="n">Ly</span> <span class="n">Ly</span><span class="p">])</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;Re(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Im(z)-axis&#39;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&#39;contours of Re(log(z))&#39;</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
-<span class="nb">print</span> <span class="o">-</span><span class="n">dpng</span> <span class="n">d</span><span class="p">.</span><span class="n">png</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">yexact</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span><span class="s">&#39;o&#39;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;RK4&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="o">-</span><span class="n">dpng</span> <span class="n">ode</span><span class="p">.</span><span class="n">png</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/feandrk4.png" alt="Phase portraits" style="width:450px;height:300px;"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Only-Matlab">Only Matlab<a class="anchor-link" href="#Only-Matlab">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation}
+\begin{split}
+\frac{dX}{dt} & = -X - Y,\\
+\frac{dY}{dt} & = -pZ + rY + sZ^2 -Z^2Y,\\
+\frac{dZ}{dt} & = -q(X+Z).
+\end{split}
+\end{equation}<ul>
+<li> ice mass ($X$),</li> 
+<li> atmospheric carbon dioxide ($Y$) and</li> 
+<li> ocean temperature ($Z$).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="k">function</span><span class="w"> </span>[x,y,z] <span class="p">=</span><span class="w"> </span><span class="nf">climate</span><span class="p">(</span>p, r, s,q, initV, T, eps<span class="p">)</span><span class="w"></span>
+<span class="c">% </span>
+<span class="c">%       INITV   - initial point</span>
+<span class="c">%       T       - time interval</span>
+<span class="c">%       EPS     - ode solver precision</span>
+<span class="c">%</span>
+<span class="c">% Example.</span>
+<span class="c">%        [X Y Z]=climate(1,0.8,0.8,1.2)</span>
+<span class="c">%        plot3(X,Y,Z);</span>
+
+<span class="k">if</span> <span class="nb">nargin</span><span class="o">&lt;</span><span class="mi">4</span>
+  <span class="nb">error</span><span class="p">(</span><span class="s">&#39;MATLAB:lorenz:NotEnoughInputs&#39;</span><span class="p">,</span><span class="s">&#39;Not enough input arguments.&#39;</span><span class="p">);</span> 
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="nb">nargin</span><span class="o">&lt;</span><span class="mi">5</span>
+  <span class="nb">eps</span> <span class="p">=</span> <span class="mf">0.000001</span><span class="p">;</span>
+  <span class="n">T</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">10</span><span class="p">];</span>
+  <span class="n">initV</span> <span class="p">=</span> <span class="p">[</span><span class="mf">0.001</span> <span class="mf">0.001</span> <span class="mf">0.001</span><span class="p">];</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="nb">nargin</span><span class="o">&lt;</span><span class="mi">6</span>
+  <span class="nb">eps</span> <span class="p">=</span> <span class="mf">0.000001</span><span class="p">;</span>
+  <span class="n">T</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">100</span><span class="p">];</span>
+<span class="k">end</span>
+
+<span class="n">options</span> <span class="p">=</span> <span class="n">odeset</span><span class="p">(</span><span class="s">&#39;RelTol&#39;</span><span class="p">,</span><span class="nb">eps</span><span class="p">,</span><span class="s">&#39;AbsTol&#39;</span><span class="p">,[</span><span class="nb">eps</span> <span class="nb">eps</span> <span class="nb">eps</span><span class="o">/</span><span class="mi">10</span><span class="p">]);</span>
+<span class="p">[</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">]</span> <span class="p">=</span> <span class="n">ode45</span><span class="p">(@(</span><span class="n">T</span><span class="p">,</span><span class="n">X</span><span class="p">)</span> <span class="n">F</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="n">q</span><span class="p">),</span> <span class="n">T</span><span class="p">,</span> <span class="n">initV</span><span class="p">,</span> <span class="n">options</span><span class="p">);</span>
+<span class="n">Tscale</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">Tdim</span> <span class="p">=</span> <span class="n">T</span><span class="o">*</span><span class="n">Tscale</span><span class="p">;</span>
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plot3</span><span class="p">(</span><span class="n">X</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">X</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">X</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="nb">axis</span> <span class="n">equal</span><span class="p">;</span>
+<span class="nb">grid</span><span class="p">;</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Phase portraits&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;X&#39;</span><span class="p">);</span> <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Y&#39;</span><span class="p">);</span> <span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;Z&#39;</span><span class="p">);</span>
+<span class="nb">hold</span> <span class="n">on</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">Tdim</span><span class="p">,</span><span class="n">X</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;X&#39;</span><span class="p">);</span> 
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">Tdim</span><span class="p">,</span><span class="n">X</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="s">&#39;g&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Y&#39;</span><span class="p">);</span> 
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">Tdim</span><span class="p">,</span><span class="n">X</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;b&#39;</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;kyr&#39;</span><span class="p">);</span> <span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Z&#39;</span><span class="p">);</span>
+
+<span class="n">x</span> <span class="p">=</span> <span class="n">X</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">y</span> <span class="p">=</span> <span class="n">X</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">z</span> <span class="p">=</span> <span class="n">X</span><span class="p">(:,</span><span class="mi">3</span><span class="p">);</span>
+<span class="k">return</span>
+<span class="k">end</span>
+
+<span class="k">function</span><span class="w"> </span>dx <span class="p">=</span><span class="w"> </span><span class="nf">F</span><span class="p">(</span>T, X, p, r, s,q<span class="p">);</span>
+
+    <span class="n">dx</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">dx</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="o">-</span><span class="n">X</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">X</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">dx</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">X</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">r</span><span class="o">*</span><span class="n">X</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">X</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">X</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">X</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+    <span class="n">dx</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="o">-</span><span class="n">q</span><span class="o">*</span><span class="p">(</span><span class="n">X</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">X</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="p">[</span><span class="n">X</span> <span class="n">Y</span> <span class="n">Z</span><span class="p">]=</span><span class="n">climate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11919,20 +12084,13 @@ a.anchor-link {
 <table style="width:100%">
   <tr>
     <th>
-    <img src="images/Relogz.png" alt="contours of Im(log(z))" style="width:400px;height:300px;">
+    <img src="images/limitcycle.png" alt="Phase portraits" style="width:400px;height:300px;">
 </th>
     <th>
-    <img src="images/Imlogz.png" alt="contours of Im(log(z))" style="width:400px;height:300px;">
+    <img src="images/climate.png" alt="Climate model" style="width:400px;height:300px;">
 </th>
   </tr>
-  <tr>
-    <td>
-    <img src="images/Recontlogz.png" alt="contours of Im(log(z))" style="width:400px;height:300px;">
-</td>
-    <td>
-    <img src="images/Imcontlogz.png" alt="contours of Im(log(z))" style="width:400px;height:300px;">
-    </td>
-  </tr>
+
   </table>
 </div>
 </div>
