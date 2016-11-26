@@ -12218,7 +12218,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">x1</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">100</span>^<span class="mi">2</span> <span class="o">-</span><span class="mi">60</span>^<span class="mi">2</span><span class="p">)</span>
@@ -12262,7 +12262,7 @@ y1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="c">% row vector</span>
@@ -12292,7 +12292,7 @@ y1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="c">% column vector </span>
@@ -12323,7 +12323,7 @@ y1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="c">% transpose</span>
@@ -12353,7 +12353,7 @@ y1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">y</span><span class="p">=[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
@@ -12382,7 +12382,7 @@ y1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
@@ -12415,14 +12415,14 @@ y1 =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A<em>A and A^2 are same but A.^2 is different! A</em>A or A^2 are the multiplication of A with A; however, A.^2 is the component wise pultiplication.</p>
+<p>$A*A$ and A^2 are same but A.^2 is different! $A*A$ or A^2 are the multiplication of A with A; however, A.^2 is the square of each element of A.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span><span class="o">*</span><span class="n">A</span>
@@ -12456,6 +12456,58 @@ ans =
 
      1     4
      9    16
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Element-wise-operations">Element-wise operations<a class="anchor-link" href="#Element-wise-operations">&#182;</a></h2><p>$.*$<br> $./$ <br> $.^$ <br> are element-wise operations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">P</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span> <span class="n">Q</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
+<span class="n">P</span><span class="o">.*</span><span class="n">Q</span>
+<span class="n">P</span><span class="o">./</span><span class="n">Q</span>
+<span class="n">P</span><span class="o">.^</span><span class="n">Q</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ans =
+
+     6     8
+
+
+ans =
+
+    0.6667    2.0000
+
+
+ans =
+
+     8    16
 </pre>
 </div>
 </div>
@@ -12826,9 +12878,9 @@ eigval =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$a_{1,1} \quad   a_{1,2}  \quad  a_{1,3}$</p>
-<p>$a_{2,1} \quad   a_{2,2}  \quad  a_{2,3}$</p>
-<p>$a_{3,1} \quad   a_{3,2}  \quad  a_{3,3}$</p>
+<p>$\left[ \begin{array}{ccc} a_{1,1} &  a_{1,2} &  a_{1,3}\\
+a_{2,1} &   a_{2,2}  &  a_{2,3}\\
+a_{3,1} &   a_{3,2}  &  a_{3,3} \end{array} \right]$</p>
 
 </div>
 </div>
@@ -12929,7 +12981,8 @@ eigval =
 <div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="nb">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%identity matrix</span>
+<span class="n">A</span> <span class="p">=</span> <span class="nb">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12993,18 +13046,60 @@ eigval =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Solve the linear system $Ax =b$.</p>
+<h3 id="Solve-the-linear-system-$Ax-=b$.">Solve the linear system $Ax =b$.<a class="anchor-link" href="#Solve-the-linear-system-$Ax-=b$.">&#182;</a></h3><p>For example, solve the following system of linear equations:<br>
+x+2y+3z = 1 <br>
+3x+3y+4z = 1 <br>
+2x+3y+3z = 2</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check the determinant whether the system has a unique solution or not. If $det(A)\ne 0$ then the system has unique solution.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">3</span><span class="p">];</span>
-<span class="n">b</span><span class="p">=[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">];</span>
+<span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ans =
+
+     4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">b</span><span class="p">=[</span><span class="mi">1</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">];</span>
 <span class="n">x</span><span class="p">=</span><span class="n">A</span><span class="o">\</span><span class="n">b</span>
 </pre></div>
 
@@ -13042,7 +13137,7 @@ eigval =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span>
@@ -13071,7 +13166,7 @@ eigval =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">5</span>
@@ -13106,7 +13201,7 @@ eigval =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -13135,7 +13230,7 @@ eigval =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
@@ -13170,7 +13265,7 @@ eigval =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">index</span> <span class="p">=</span> <span class="nb">find</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span>
@@ -13199,7 +13294,7 @@ eigval =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
@@ -13231,14 +13326,18 @@ eigval =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="run-a-script-file">run a script file<a class="anchor-link" href="#run-a-script-file">&#182;</a></h2><p>For example plottest.m is an script file. We can run plottest.m by simply write plottest</p>
+<h2 id="run-a-script-file">run a script file<a class="anchor-link" href="#run-a-script-file">&#182;</a></h2><p>For example plottest.m is an script file. plottest.m contains the following three lines:<br>
+x = 0:0.1:10;<br>
+y = sin(x);<br>
+plot(x,y)<br>
+We can run plottest.m by simply write plottest</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">plottest</span>
@@ -13257,8 +13356,8 @@ eigval =
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAGkCAIAAACgjIjwAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
-B3RJTUUH4AsaAxEfTnOndAAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
-bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAyNS1Ob3YtMjAxNiAxOToxNzozMf5wk7kAACAA
+B3RJTUUH4AsaDTokg5aeMwAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
+bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAyNi1Ob3YtMjAxNiAwNTo1ODozNfyiDXUAACAA
 SURBVHic7d1/cJTXfe/xYzBGiB+jFZ7COlBWXiIFgscYaw3R2GGFbcEFkzBpZyDtdCTxR2ITt1Mb
 Y2I7QYgJfziZGKeeAStcroTrZMQ0IjH3mhbkwspjU9eShZGNFBBbLeVGMsJodSlFAiRx/3jwer2S
 Vitpn+ec55z366/wgKQTzLOf83y/55znjlu3bgkAAGSbIHsAAAAIQSABABRBIAEAlEAgAQCUQCAB
