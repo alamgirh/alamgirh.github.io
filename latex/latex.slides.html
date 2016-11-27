@@ -1,64 +1,10 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<title>latex slides</title>
+<head><meta charset="utf-8" />
+<title>latex-jupyter</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-
-</script>
-
-<!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Loading the mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -11745,157 +11691,151 @@ ul.typeahead-list > li > a {
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
-  overflow-y: scroll;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
 }
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-div.text_cell.rendered .rendered_html {
-  /* The H1 height seems miscalculated, we are just hidding the scrollbar */
-  overflow-y: hidden;
-}
-a.anchor-link {
-  /* There is still an anchor, we are only hidding it */
-  display: none;
-}
-.rendered_html p {
-  text-align: inherit;
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
 
-
-<div class="reveal">
-<div class="slides">
-<section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="$\LaTeX$-&#2486;&#2503;&#2454;&#2494;">$\LaTeX$ &#2486;&#2503;&#2454;&#2494;<a class="anchor-link" href="#$\LaTeX$-&#2486;&#2503;&#2454;&#2494;">&#182;</a></h1><p>গণিত ও গাণিতিক বিজ্ঞানের শিক্ষার্থীদের জন্য $\LaTeX$ একটি অপরিহার্য টুলস। গণিত হচ্ছে একধরণের ভাষা। এই ভাষা কে সুন্দর করে লেখার উপায় হচ্ছে $\LaTeX$ ব্যবহার করে লিখা। বিশেষত গাণিতিক সমীকরণ লেখার জন্য $\LaTeX$ একটি চমৎকার উপায়। $\LaTeX$ দিয়ে আমরা বিভিন্ন ডকুমেন্ট প্রস্তুত করতে পারি। যেমন CV, প্রজেক্ট, থিসিস, গবেষণা প্রবন্ধ ইত্যাদি। তাই গাণিতিক বিজ্ঞানের সকল শিক্ষার্থীদের $\LaTeX$ শেখা উচিত। এই শেখার প্রক্রিয়াটি শুরু হতে পারে প্রথমবর্ষ থেকেই।</p>
-<h2 id="&#2453;&#2495;&#2477;&#2494;&#2476;&#2503;-&#2486;&#2497;&#2480;&#2497;-&#2453;&#2480;&#2494;-&#2479;&#2494;&#2527;?">&#2453;&#2495;&#2477;&#2494;&#2476;&#2503; &#2486;&#2497;&#2480;&#2497; &#2453;&#2480;&#2494; &#2479;&#2494;&#2527;?<a class="anchor-link" href="#&#2453;&#2495;&#2477;&#2494;&#2476;&#2503;-&#2486;&#2497;&#2480;&#2497;-&#2453;&#2480;&#2494;-&#2479;&#2494;&#2527;?">&#182;</a></h2><p> কম্পিউটারে একটা $\LaTeX$ সফ্টওয়ার ইনস্টল করে নিতে হবে। যেমন <a href='http://www.xm1math.net/texmaker/'>Texmaker</a>, <a href='http://kile.sourceforge.net/'> Kile</a>  ইত্যাদি । এছাড়া অনলাইনে $\LaTeX$ ব্যবহারের জন্য <a href='https://www.sharelatex.com/'> sharelatex </a> এ একাউন্ট ওপেন করতে পারেন। </p><p> $\LaTeX$ ব্যবহার করে আপনি কি প্রস্তুত করে চান? প্রথমে আপনার CV প্রস্তুত করতে পারেন। এর জন্য আপনি একটি CV Template সংগ্রহ করতে পারেন। ইন্টারনেটে হাজার হাজার Template রয়েছে। সেখান থেকে আপনার পছন্দের একটি খুঁজে বের করুন। এছাড়া আপনি যদি <a href='https://www.sharelatex.com/'> sharelatex </a> ব্যবহার করেন সেখানেও রয়েছে অসংখ্য <a href='https://www.sharelatex.com/templates/cv-or-resume'> CV Template</a>. <a href='https://www.sharelatex.com/'> sharelatex </a> এ আপনার পছন্দের <a href='https://www.sharelatex.com/templates/cv-or-resume'> CV Template</a> থেকে তৈরি করে ফেলুন আপনার CV. CV প্রস্তুতের জন্য যে .tex ফাইল আপনি ব্যবহার করেছেন সেটি আপনার কম্পিউটারে সেভ করে রাখুন। এখন আপনার কম্পিউটারের ইনস্টল করা $\LaTeX$ সফটওয়ার ব্যবহার করে আপনার CV এডিট করা শিখুন। হ্যাঁ, আপনিও এখন একজন $\LaTeX$ ব্যবহারকারি!!! </p><p> $\LaTeX$ ব্যবহারের গুরুত্ব পূর্ণ দিক হচ্ছে ডকুমেন্ট প্রস্তুত করা। যেখানে ছবি, টেবিল ও গাণিতিক সমীকরণ থাকবে। এর জন্য আবারো <a href='https://www.sharelatex.com/'> sharelatex </a> ব্যবহার করতে পারেন। <a href='https://www.sharelatex.com/'> sharelatex </a> এ একটি নতুন প্রজেক্ট তৈরি করুন । যেমন প্রজেক্টটির নাম হতে পারে Quadratic Equations. এর মধ্যে আপনি নিচের লেখাটি লিখতে পারেন: </p><p> When $a \ne 0$, quadratic equation $ax^2 + bx + c = 0$ has two roots and they are
-$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$ </p>
-<p>
-$ \begin{array}{rcl}
+<h2 id="&#2453;&#2495;&#2477;&#2494;&#2476;&#2503;-&#2486;&#2497;&#2480;&#2497;-&#2453;&#2480;&#2494;-&#2479;&#2494;&#2527;?">&#2453;&#2495;&#2477;&#2494;&#2476;&#2503; &#2486;&#2497;&#2480;&#2497; &#2453;&#2480;&#2494; &#2479;&#2494;&#2527;?<a class="anchor-link" href="#&#2453;&#2495;&#2477;&#2494;&#2476;&#2503;-&#2486;&#2497;&#2480;&#2497;-&#2453;&#2480;&#2494;-&#2479;&#2494;&#2527;?">&#182;</a></h2><p> কম্পিউটারে একটা $\LaTeX$ সফ্টওয়ার ইনস্টল করে নিতে হবে। যেমন [Texmaker](http://www.xm1math.net/texmaker/), [Kile](http://kile.sourceforge.net/) ইত্যাদি । এছাড়া অনলাইনে $\LaTeX$ ব্যবহারের জন্য [sharelatex](https://www.sharelatex.com/) এ একাউন্ট ওপেন করতে পারেন। </p><p> $\LaTeX$ ব্যবহার করে আপনি কি প্রস্তুত করে চান? প্রথমে আপনার CV প্রস্তুত করতে পারেন। এর জন্য আপনি একটি CV Template সংগ্রহ করতে পারেন। ইন্টারনেটে হাজার হাজার Template রয়েছে। সেখান থেকে আপনার পছন্দের একটি খুঁজে বের করুন। এছাড়া আপনি যদি [sharelatex](https://www.sharelatex.com/) ব্যবহার করেন সেখানেও রয়েছে অসংখ্য [CV Template](https://www.sharelatex.com/templates/cv-or-resume). [sharelatex](https://www.sharelatex.com/) এ আপনার পছন্দের [CV Template](https://www.sharelatex.com/templates/cv-or-resume) থেকে তৈরি করে ফেলুন আপনার CV. CV প্রস্তুতের জন্য যে .tex ফাইল আপনি ব্যবহার করেছেন সেটি আপনার কম্পিউটারে সেভ করে রাখুন। এখন আপনার কম্পিউটারের ইনস্টল করা $\LaTeX$ সফটওয়ার ব্যবহার করে আপনার CV এডিট করা শিখুন। হ্যাঁ, আপনিও এখন একজন $\LaTeX$ ব্যবহারকারি!!! </p><p> $\LaTeX$ ব্যবহারের গুরুত্ব পূর্ণ দিক হচ্ছে ডকুমেন্ট প্রস্তুত করা। যেখানে ছবি, টেবিল ও গাণিতিক সমীকরণ থাকবে। এর জন্য আবারো [sharelatex](https://www.sharelatex.com/) ব্যবহার করতে পারেন। [sharelatex](https://www.sharelatex.com/) এ একটি নতুন প্রজেক্ট তৈরি করুন । যেমন প্রজেক্টটির নাম হতে পারে **Quadratic Equations**. এর মধ্যে আপনি নিচের লেখাটি লিখতে পারেন: </p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When $a \ne 0$, quadratic equation $ax^2 + bx + c = 0$ has two roots and they are
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$</p>
+$$ \begin{array}{rcl}
 y & = & a x^{2}+bx+c\\
-  & = & a\left(x^{2}+2\times\dfrac{b}{2a}x+\dfrac{c}{a}\right)\\
-  & = & a\left(x+\dfrac{b}{2a}\right)^2 - \dfrac{b^2}{4a} + c
-\end{array} $ <br>
-Vertex of the parabola, $y = f(x)$ is $\left(-\dfrac{b}{2a}, c - \dfrac{b^2}{4a}\right)$.
-</p><p> লেখাটিকে আপনার .tex ফাইলে নিচের মত করে লিখতে হবে: </p>
- <figure>
-  <img src="figure/quadraticLatex.png" alt="LaTex: Quadratic Equation" width="80%">
-</figure> 
+  & = & a\left(x^{2}+2\times\frac{b}{2a}x+\frac{c}{a}\right)\\
+  & = & a\left(x+\frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c
+\end{array}$$<p>Vertex of the parabola, $y = f(x)$ is $\left(-\frac{b}{2a}, c - \frac{b^2}{4a}\right)$.</p>
 
-<a href='http://mathurl.com/'>mathURL</a> ব্যবহার করে গাণিতিক যেকোন লেখা বা সমীকরণ লিখতে পারেন। এখন আপনি যদি নিচের মতো করে একটি টেবিল প্রস্তুত করতে চান:
- <table style="width:50%">
-  <tr>
-    <th>$d = b^2 - 4ac$ </th>
-    <th>comment about roots</th>
-    </tr>
-  <tr>
-    <td>$d>0$ </td>
-    <td>roots are real and distinct</td>
-   </tr>
-  <tr>
-    <td>$d = 0$ </td>
-    <td> roots are real and same</td>
-  </tr>
-  <tr>
-    <td> $d<0$ </td>
-    <td> roots are complex</td>
-  </tr>
-</table> 
-
-তাহলে আপনার .tex ফাইলে নিচের মত করে লিখতে হবে:
-
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
- $d = b^2 - 4ac$ & comment about roots \\ 
- \hline
- $d>0$ & roots are real and distinct \\  
- \hline
- $d = 0$ & roots are real and same \\
- \hline
- $d<0$ & roots are complex \\
-\hline
-\end{tabular}
-\end{center}
-
-এখন আপনার আগ্রহ তৈরি হতে পারে আপনার ডকুমেন্টে একটি ছবি সংযুক্ত করবেন। যেমন quadraticplots.png ফাইল আপনি সংযুক্ত করতে চান। 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>লেখাটিকে আপনার .tex ফাইলে নিচের মত করে লিখতে হবে:</p>
+<div class="highlight"><pre><span></span>When <span class="s">$</span><span class="nb">a </span><span class="nv">\ne</span><span class="nb"> </span><span class="m">0</span><span class="s">$</span>, quadratic equation <span class="s">$</span><span class="nb">ax^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> bx </span><span class="o">+</span><span class="nb"> c </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="s">$</span> has two roots and they are
+<span class="s">$</span><span class="nb">x </span><span class="o">=</span><span class="nb"> {</span><span class="o">-</span><span class="nb">b </span><span class="nv">\pm</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="nb">{b^</span><span class="m">2</span><span class="o">-</span><span class="m">4</span><span class="nb">ac} </span><span class="nv">\over</span><span class="nb"> </span><span class="m">2</span><span class="nb">a}.</span><span class="s">$</span> 
+<span class="sb">$$</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{rcl}</span>
+<span class="nb">y &amp; </span><span class="o">=</span><span class="nb"> &amp; a x^{</span><span class="m">2</span><span class="nb">}</span><span class="o">+</span><span class="nb">bx</span><span class="o">+</span><span class="nb">c</span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">  &amp; </span><span class="o">=</span><span class="nb"> &amp; a</span><span class="nv">\left</span><span class="o">(</span><span class="nb">x^{</span><span class="m">2</span><span class="nb">}</span><span class="o">+</span><span class="m">2</span><span class="nv">\times\frac</span><span class="nb">{b}{</span><span class="m">2</span><span class="nb">a}x</span><span class="o">+</span><span class="nv">\frac</span><span class="nb">{c}{a}</span><span class="nv">\right</span><span class="o">)</span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">  &amp; </span><span class="o">=</span><span class="nb"> &amp; a</span><span class="nv">\left</span><span class="o">(</span><span class="nb">x</span><span class="o">+</span><span class="nv">\frac</span><span class="nb">{b}{</span><span class="m">2</span><span class="nb">a}</span><span class="nv">\right</span><span class="o">)</span><span class="nb">^</span><span class="m">2</span><span class="nb"> </span><span class="o">-</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{b^</span><span class="m">2</span><span class="nb">}{</span><span class="m">4</span><span class="nb">a} </span><span class="o">+</span><span class="nb"> c</span>
+<span class="nv">\end</span><span class="nb">{array}</span><span class="s">$$</span> 
+Vertex of the parabola, <span class="s">$</span><span class="nb">y </span><span class="o">=</span><span class="nb"> f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="s">$</span> is <span class="s">$</span><span class="nv">\left</span><span class="o">(-</span><span class="nv">\frac</span><span class="nb">{b}{</span><span class="m">2</span><span class="nb">a}, c </span><span class="o">-</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{b^</span><span class="m">2</span><span class="nb">}{</span><span class="m">4</span><span class="nb">a}</span><span class="nv">\right</span><span class="o">)</span><span class="s">$</span>.
+</pre></div>
+<p><a href="href=&#39;http://mathurl.com/">mathURL</a> ব্যবহার করে গাণিতিক যেকোন লেখা বা সমীকরণ লিখতে পারেন। এখন আপনি যদি নিচের মতো করে একটি টেবিল প্রস্তুত করতে চান:</p>
+<table>
+<thead><tr>
+<th>$d = b^2-4ac$</th>
+<th>comment about roots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$d>0$</td>
+<td>roots are real and distinct</td>
+</tr>
+<tr>
+<td>$d = 0$</td>
+<td>roots are real and same</td>
+</tr>
+<tr>
+<td>$d<0$</td>
+<td>roots are complex</td>
+</tr>
+</tbody>
+</table>
+<p>তাহলে আপনার .tex ফাইলে নিচের মত করে লিখতে হবে:</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|l|l|<span class="nb">}</span>
+<span class="k">\hline</span>
+ <span class="s">$</span><span class="nb">d </span><span class="o">=</span><span class="nb"> b^</span><span class="m">2</span><span class="nb"> </span><span class="o">-</span><span class="nb"> </span><span class="m">4</span><span class="nb">ac</span><span class="s">$</span> <span class="nb">&amp;</span> comment about roots <span class="k">\\</span> 
+ <span class="k">\hline</span>
+ <span class="s">$</span><span class="nb">d&gt;</span><span class="m">0</span><span class="s">$</span> <span class="nb">&amp;</span> roots are real and distinct <span class="k">\\</span>  
+ <span class="k">\hline</span>
+ <span class="s">$</span><span class="nb">d </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="s">$</span> <span class="nb">&amp;</span> roots are real and same <span class="k">\\</span>
+ <span class="k">\hline</span>
+ <span class="s">$</span><span class="nb">d&lt;</span><span class="m">0</span><span class="s">$</span> <span class="nb">&amp;</span> roots are complex <span class="k">\\</span>
+<span class="k">\hline</span>
+<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</pre></div>
+<p>এখন আপনার আগ্রহ তৈরি হতে পারে আপনার ডকুমেন্টে একটি ছবি সংযুক্ত করবেন। যেমন quadraticplots.png ফাইল আপনি সংযুক্ত করতে চান।</p>
 <figure>
   <img src="figure/quadraticplots.png" alt="LaTex: Quadratic Functions" width="50%">
-</figure> 
-
-তাহলে আপনার .tex ফাইলে নিচের মত করে লিখতে পারেন।
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{quadraticplots.png}
-\caption{Quadratic Functions}
-\label{fig:quadratic}
-\end{figure}
-
-<p> ইতিমধ্যে আপনি গাণিতিক সমীকরণ, টেবিল তৈরি ও ছবি সংযুক্ত করা শিখে ফেলেছেন! এরপর ধীরে ধীরে আপনার মনে হাজারো প্রশ্ন তৈরি হবে। কিভাবে সমীকরণের নাম্বার লিখতে হয়, কিভাবে ডিফারেন্টিয়াল সমীকরণ লিখতে হয়, একাদিক ছবি থাকলে কিভাবে সংযুক্ত করতে হবে, কিভাবে টেবিলের সারি ও কলাম সংখ্যা বাড়াতে হবে কিংবা কমাতে হবে। এরকম হাজারো প্রশ্নের সমাধান দিয়ে দিবে google!</p><p> আপনি যদি শিক্ষার্থী হন তাহলে $\LaTeX$ এ লিখে ফেলুন আপনার এসাইনমেন্ট। আর যদি শিক্ষক বা অধ্যাপক হন তাহলে $\LaTeX$ ব্যবহার করে পরীক্ষার প্রশ্ন কিংবা লেকচার নোট বানিয়ে ফেলুন। </p><p> এখন আপনি $\LaTeX$ ব্যবহার করে প্রজেক্ট, থিসিস বা জার্নাল পেপার লিখার জন্য প্রস্তুত হয়ে গেলেন। যদি আপনার বিশ্ববিদ্যালয়ে নির্ধারিত কোনো Template না থাকে তাহলে <a href='https://www.sharelatex.com/'> sharelatex </a> এ অসংখ্য <a href='https://www.sharelatex.com/templates/thesis'>Thesis Template</a> রয়েছে, সেখান থেকে আপনার পছন্দের <a href='https://www.sharelatex.com/templates/thesis'>Template</a> টি বাছাই করে তৈরি করে ফেলুন আপনার থিসিস। হতে পারে সেটি এমআইটি, হারবার্ড, প্রিন্সটন কিংবা অক্সফোর্ডের থিসিস টেমপ্লেট। আর জার্নালে পেপার সাবমিট এর জন্য প্রত্যেক জার্নালের রয়েছে নিজস্ব Template. সেই Template এ লিখে ফেলুন আপনার প্রথম $\LaTeX$ এ লেখা পেপার। </p><p> থিসিস বা প্রজেক্ট কিংবা পেপার লিখা শেষ । এরপর যদি আপনার গবেষণা প্রেজেন্ট করতে চান তাহলে $\LaTeX$ ব্যবহার করে তৈরি করে ফেলুন আপনার প্রেজেন্টেশন ফাইল। আবারো <a href='https://www.sharelatex.com/'> sharelatex </a> ব্যবহার করতে পারেন । সেখানে রয়েছে অসংখ্য <a href='https://www.sharelatex.com/templates/presentations'>প্রেজেন্টেশন Template</a>. </p><p> এছাড়া <a href='https://github.com/'> github </a> এ একাউন্ট খুলতে পারেন। <a href='https://github.com/'> github </a>  এ আপনি অসংখ্য থিসিস বা প্রেজেন্টেশন Template খুঁজে পেতে পারেন। </p><p> সর্বশেষ, আপনার লেখার অরিজিনালিটি বজায় রাখুন। আপনার লেখা আপনার মতো করে লিখুন । আরেক জনের লেখা হুবহু কপি পেস্ট করা থেকে বিরত থাকুন। লেখায় প্লাজিরিজম চেক করুন। কপিরাইট আইন মেনে চলুন । ধন্যবাদ। </p>
+</figure><p>তাহলে আপনার .tex ফাইলে নিচের মত করে লিখতে পারেন।</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h!]
+<span class="k">\centering</span>
+<span class="k">\includegraphics</span><span class="na">[scale=.5]</span><span class="nb">{</span>quadraticplots.png<span class="nb">}</span>
+<span class="k">\caption</span><span class="nb">{</span>Quadratic Functions<span class="nb">}</span>
+<span class="k">\label</span><span class="nb">{</span>fig:quadratic<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</pre></div>
+<p> ইতিমধ্যে আপনি গাণিতিক সমীকরণ, টেবিল তৈরি ও ছবি সংযুক্ত করা শিখে ফেলেছেন! এরপর ধীরে ধীরে আপনার মনে হাজারো প্রশ্ন তৈরি হবে। কিভাবে সমীকরণের নাম্বার লিখতে হয়, কিভাবে ডিফারেন্টিয়াল সমীকরণ লিখতে হয়, একাদিক ছবি থাকলে কিভাবে সংযুক্ত করতে হবে, কিভাবে টেবিলের সারি ও কলাম সংখ্যা বাড়াতে হবে কিংবা কমাতে হবে। এরকম হাজারো প্রশ্নের সমাধান দিয়ে দিবে google!</p><p> আপনি যদি শিক্ষার্থী হন তাহলে $\LaTeX$ এ লিখে ফেলুন আপনার এসাইনমেন্ট। আর যদি শিক্ষক বা অধ্যাপক হন তাহলে $\LaTeX$ ব্যবহার করে পরীক্ষার প্রশ্ন কিংবা লেকচার নোট বানিয়ে ফেলুন। </p><p> এখন আপনি $\LaTeX$ ব্যবহার করে প্রজেক্ট, থিসিস বা জার্নাল পেপার লিখার জন্য প্রস্তুত হয়ে গেলেন। যদি আপনার বিশ্ববিদ্যালয়ে নির্ধারিত কোনো Template না থাকে তাহলে [sharelatex](https://www.sharelatex.com/) এ অসংখ্য [Thesis Template](https://www.sharelatex.com/templates/thesis) রয়েছে, সেখান থেকে আপনার পছন্দের [Template](https://www.sharelatex.com/templates/thesis) টি বাছাই করে তৈরি করে ফেলুন আপনার থিসিস। হতে পারে সেটি এমআইটি, হারবার্ড, প্রিন্সটন কিংবা অক্সফোর্ডের থিসিস টেমপ্লেট। আর জার্নালে পেপার সাবমিট এর জন্য প্রত্যেক জার্নালের রয়েছে নিজস্ব Template. সেই Template এ লিখে ফেলুন আপনার প্রথম $\LaTeX$ এ লেখা পেপার। </p><p> থিসিস বা প্রজেক্ট কিংবা পেপার লিখা শেষ । এরপর যদি আপনার গবেষণা প্রেজেন্ট করতে চান তাহলে $\LaTeX$ ব্যবহার করে তৈরি করে ফেলুন আপনার প্রেজেন্টেশন ফাইল। আবারো [sharelatex](https://www.sharelatex.com/) ব্যবহার করতে পারেন । সেখানে রয়েছে অসংখ্য [প্রেজেন্টেশন Template](https://www.sharelatex.com/templates/presentations). </p><p> এছাড়া [github](https://github.com/) এ একাউন্ট খুলতে পারেন। [github](https://github.com/)  এ আপনি অসংখ্য থিসিস বা প্রেজেন্টেশন Template খুঁজে পেতে পারেন। </p><p> সর্বশেষ, আপনার লেখার অরিজিনালিটি বজায় রাখুন। আপনার লেখা আপনার মতো করে লিখুন । আরেক জনের লেখা হুবহু কপি পেস্ট করা থেকে বিরত থাকুন। লেখায় প্লাজিরিজম চেক করুন। কপিরাইট আইন মেনে চলুন । ধন্যবাদ। </p>
 </div>
 </div>
 </div>
@@ -11906,71 +11846,23 @@ Vertex of the parabola, $y = f(x)$ is $\left(-\dfrac{b}{2a}, c - \dfrac{b^2}{4a}
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><br></p>
 <h3 id="&#2465;&#2494;&#2441;&#2472;&#2482;&#2507;&#2465;-&#2482;&#2495;&#2434;&#2453;">&#2465;&#2494;&#2441;&#2472;&#2482;&#2507;&#2465; &#2482;&#2495;&#2434;&#2453;<a class="anchor-link" href="#&#2465;&#2494;&#2441;&#2472;&#2482;&#2507;&#2465;-&#2482;&#2495;&#2434;&#2453;">&#182;</a></h3><p>এই টিউটোরিয়ালে ব্যবহৃত .tex ফাইল ও .pdf ডাউনলোড লিংক:</p>
-<p><ul> 
-  <li> <a href='quadratic.tex'> quadratic.tex</a></li>
-  <li> <a href='quadratic.pdf'> quadratic.pdf</a></li>
+<ul>
+<li><a href="quadratic.tex">quadratic.tex</a></li>
+<li><a href="quadratic.pdf">quadratic.pdf</a>
+<br></li>
 </ul>
-<br><br></p>
+<h3 id="&#2438;&#2480;&#2507;-&#2453;&#2495;&#2459;&#2497;-&#2468;&#2469;&#2509;&#2479;">&#2438;&#2480;&#2507; &#2453;&#2495;&#2459;&#2497; &#2468;&#2469;&#2509;&#2479;<a class="anchor-link" href="#&#2438;&#2480;&#2507;-&#2453;&#2495;&#2459;&#2497;-&#2468;&#2469;&#2509;&#2479;">&#182;</a></h3><ul>
+<li>আমি এই লেখাটি <a href="http://jupyter.org/">Jupyter Notebook</a> এ লিখেছি। এতে <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a> ব্যবহার করেছি। </li>
+<li>$\LaTeX$ ও Markdown শেখার একটি <a href="http://nbviewer.jupyter.org/github/twistedhardware/mltutorial/blob/master/notebooks/jupyter/2.%20Markdown%20%26%20LaTeX.ipynb">লিংক</a></li>
+<li>যদি LaTeX এর পাশাপাশি <a href="http://jupyter.org/">Jupyter Notebook</a> এ আগ্রহী হন তাহলে এই <a href="http://www.nature.com/news/ipython-interactive-demo-7.21492?article=1.16261">interactive example</a> লিংকে আপনার প্রথম <a href="http://jupyter.org/">Jupyter Notebook</a> ব্যবহার করে দেখতে পারেন। আপনিও এখন একজন <a href="http://jupyter.org/">Jupyter Notebook</a> ব্যবহার করি!!!
+<img src="https://raw.githubusercontent.com/jupyter/nature-demo/master/images/jupyter-logo.png" width="250px" style="margin: 20px auto;">
+<br></li>
+</ul>
 
 </div>
 </div>
-</div></section></section>
 </div>
-</div>
-
-<script>
-
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
-    ],
-
-    function(head, Reveal){
-
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
-                  condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
-                  async: true,
-                  condition: function() { return !!document.body.classList; } }
-            ]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        var update_scroll = function(event){
-          $(".reveal").scrollTop(0);
-        };
-
-        Reveal.addEventListener('slidechanged', update_scroll);
-
-    }
-);
-</script>
-
+    </div>
+  </div>
 </body>
-
-
 </html>
