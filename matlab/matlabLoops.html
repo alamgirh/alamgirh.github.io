@@ -11755,6 +11755,40 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">n</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">s</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+ <span class="n">s</span> <span class="p">=</span> <span class="n">s</span><span class="o">+</span><span class="nb">i</span><span class="p">;</span>   
+<span class="k">end</span>
+<span class="n">s</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>s =
+
+    15
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11767,10 +11801,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">n</span><span class="p">=</span><span class="mi">20</span><span class="p">;</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">n</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span>
 <span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
 <span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
 <span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">3</span><span class="p">:</span><span class="n">n</span>
@@ -11791,21 +11825,7 @@ div#notebook {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>F =
 
-  Columns 1 through 6
-
-           1           1           2           3           5           8
-
-  Columns 7 through 12
-
-          13          21          34          55          89         144
-
-  Columns 13 through 18
-
-         233         377         610         987        1597        2584
-
-  Columns 19 through 20
-
-        4181        6765
+     1     1     2     3     5     8    13    21    34    55
 </pre>
 </div>
 </div>
@@ -11816,14 +11836,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">clear</span> <span class="n">all</span>
 <span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
 <span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">)=</span><span class="mi">1</span><span class="p">;</span>
 <span class="n">n</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="n">F</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="n">F</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">F</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 <span class="k">while</span> <span class="n">n</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">10</span>
     <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="p">)=</span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
     <span class="n">n</span><span class="p">=</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
@@ -11852,71 +11871,9 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A simple while loop</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="mi">1</span>
-<span class="k">while</span> <span class="n">x</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">10</span>
-    <span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
-<span class="k">end</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>x =
-
-     1
-
-
-x =
-
-     2
-
-
-x =
-
-     4
-
-
-x =
-
-     8
-
-
-x =
-
-    16
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">];</span>
@@ -11976,7 +11933,7 @@ C =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">];</span>
@@ -12044,12 +12001,11 @@ Matrix multiplication using for loop
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">n</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
 <span class="n">f</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
-<span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
     <span class="n">f</span><span class="p">=</span><span class="n">f</span><span class="o">*</span><span class="nb">i</span><span class="p">;</span>
     <span class="nb">i</span><span class="p">=</span><span class="nb">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
@@ -12104,7 +12060,7 @@ For example $x = cosh(x/4)$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">clear</span> <span class="n">all</span>
@@ -12180,8 +12136,8 @@ k =
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAGkCAIAAACgjIjwAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
-B3RJTUUH4AsaAyctD7hngQAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
-bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAyNS1Ob3YtMjAxNiAxOTozOTo0NFtE1aIAACAA
+B3RJTUUH4AwDAw4TFa4hxAAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
+bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAwMi1EZWMtMjAxNiAxOToxNDoxOeGib5EAACAA
 SURBVHic7d1/cBR1nv/xd4AsGH5c4lrLgrKZQS5BS0tPfshRi5kBXSwU9Ou5xereVdLUngJGy18r
 i64MTWndKXviLlcoWuxMFnTPWtGFOri9ipCG0hR7y8kP+SHEYibLkRMQjuI4foUk3z8+oRkmyRAg
 M59Pdz8ftUWFTojvjTivefXn090FbW1tAgCAbr10DwAAgAiBBAAwBIEEADACgQQAMAKBBAAwAoEE
@@ -12454,8 +12410,8 @@ jPD/AXFFEsDPCWdbAAAAAElFTkSuQmCC
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAGkCAIAAACgjIjwAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
-B3RJTUUH4AsaAyc7+2zS0AAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
-bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAyNS1Ob3YtMjAxNiAxOTozOTo1OEvpqMgAABzi
+B3RJTUUH4AwDAw4Ui8q0ZwAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
+bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAwMi1EZWMtMjAxNiAxOToxNDoyMLNThPYAABzi
 SURBVHic7d1xbNT1/cfxNyCiLRK6uRBFdt8605oZ5iRV1CD3rUNHcChLSEyWud6RbWzAlqEMAlu4
 3jKyoX+gM1EJMb1m7A+zOIOJxARHv92U+DMIo85uXcn6bRq7UeZM1OCg7d3vj8/12+99r8ABd/2+
 777Pxx/k7nP3fd+n/XD36uf7/dz3OyOXywkAAGGbGXYHAAAQIZAAAEoQSAAAFQgkAIAKBBIAQAUC
@@ -12602,6 +12558,84 @@ rkJggg==
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">x</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">10</span>
+    <span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x =
+
+     1
+
+
+x =
+
+     2
+
+
+x =
+
+     4
+
+
+x =
+
+     8
+
+
+x =
+
+    16
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Infinite-Loop!">Infinite Loop!<a class="anchor-link" href="#Infinite-Loop!">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="mi">1</span>
+<span class="k">while</span> <span class="mi">1</span>
+    <span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+    <span class="n">pause</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
 </div>
 </div>
 

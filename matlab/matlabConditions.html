@@ -11751,6 +11751,71 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditions">Conditions<a class="anchor-link" href="#Conditions">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>0 means false; any non-zero number means true</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="k">if</span> <span class="n">false</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;True condition&#39;</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="k">if</span> <span class="mi">1</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;True condition&#39;</span><span class="p">);</span>
+<span class="k">else</span>
+    <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;False condition&#39;</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True condition
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>The roots of quadratic equations $a x^2 + b x + c = 0$ are $  r = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.</p>
 
 </div>
@@ -11758,11 +11823,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">c</span><span class="p">=</span><span class="o">-</span><span class="mi">3</span><span class="p">;</span>
-<span class="n">d</span><span class="p">=</span><span class="n">b</span>^<span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>
+<span class="n">d</span><span class="p">=</span><span class="n">b</span>^<span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
 <span class="k">if</span> <span class="n">d</span><span class="o">&gt;</span><span class="p">=</span><span class="mi">0</span>
     <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;roots are positive.&#39;</span><span class="p">);</span>
 <span class="k">end</span>
@@ -11778,7 +11843,11 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>roots are positive.
+<pre>d =
+
+    12
+
+roots are positive.
 </pre>
 </div>
 </div>
@@ -11789,11 +11858,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">c</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="n">d</span><span class="p">=</span><span class="n">b</span>^<span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>
+<span class="n">d</span><span class="p">=</span><span class="n">b</span>^<span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
 <span class="k">if</span> <span class="n">d</span><span class="o">&gt;</span><span class="p">=</span><span class="mi">0</span>
     <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;roots are positive.&#39;</span><span class="p">);</span>
 <span class="k">else</span>
@@ -11811,7 +11880,11 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>roots are immaginary
+<pre>d =
+
+   -11
+
+roots are immaginary
 </pre>
 </div>
 </div>
@@ -11822,11 +11895,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">c</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
-<span class="n">d</span><span class="p">=</span><span class="n">b</span>^<span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>
+<span class="n">d</span><span class="p">=</span><span class="n">b</span>^<span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
 <span class="k">if</span> <span class="n">d</span><span class="o">&gt;</span><span class="mi">0</span>
     <span class="nb">disp</span><span class="p">(</span><span class="s">&#39;roots are positive and distinct&#39;</span><span class="p">);</span>
     <span class="n">r1</span> <span class="p">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
@@ -11852,7 +11925,11 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>roots are immaginary
+<pre>d =
+
+   -11
+
+roots are immaginary
 r1 = -0.500000 + i 1.658312 
 r2 = -0.500000 - i 1.658312
 </pre>
@@ -11865,7 +11942,7 @@ r2 = -0.500000 - i 1.658312
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="c">%plot gnuplot</span>
@@ -11878,17 +11955,15 @@ r2 = -0.500000 - i 1.658312
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="c">% define a quadretic function with a, b and c parameters</span>
 <span class="n">f</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
-
 <span class="n">x</span><span class="p">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">3</span><span class="p">;</span>
 <span class="n">y1</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c">%we get two real roots </span>
 <span class="n">y2</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c">%one real root</span>
 <span class="n">y3</span><span class="p">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c">%no real root</span>
-
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">hold</span> <span class="n">on</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">),</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">)</span> <span class="c">%plotting axises</span>
@@ -11909,8 +11984,8 @@ r2 = -0.500000 - i 1.658312
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjAAAAGkCAIAAACgjIjwAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
-B3RJTUUH4AsaAxwKlgA90gAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
-bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAyNS1Ob3YtMjAxNiAxOToyODoxMKSCqysAACAA
+B3RJTUUH4AwDAxQ3mYA/zgAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
+bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAwMi1EZWMtMjAxNiAxOToyMDo1NUS6CzkAACAA
 SURBVHic7d1vbFRXfv/xr/EaiE2QrdBNnEB93UR2lIg2IAdolKxnUsJGTlnxq7KKtOrWM6gtu4S0
 2/yjy4OMB4kH0T4gWX7NhqJ0xvnlSVXhCqREGzmLx2mCshGB4gRvXUfytdK4wiwbaZc1Av/7PTjD
 4Wb833P/nHvv+/UgMhczPob4fuac8z3fWzE9PS0AAARtRdADAABAhEACABiCQAIAGIFAAgAYgUAC
@@ -12138,6 +12213,71 @@ AIARCCQAgBEIJACAEQgkAIARCCQAgBEIJACAEf4/SoxiLtM5puIAAAAASUVORK5CYII=
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span><span class="p">=</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">x</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">10</span>
+    <span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="k">end</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>x =
+
+     1
+
+
+x =
+
+     2
+
+
+x =
+
+     4
+
+
+x =
+
+     8
+
+
+x =
+
+    16
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span>
+</pre></div>
+
+</div>
 </div>
 </div>
 

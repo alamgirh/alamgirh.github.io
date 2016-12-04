@@ -11760,7 +11760,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$f(x) = x^2 -1$</p>
+<p>function [output1,...,outputN] = myfun(input1,...,inputM)</p>
 
 </div>
 </div>
@@ -11775,6 +11775,29 @@ Error: Function definitions are not permitted in this context.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$f(x) = x^2 -1$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">open</span> <span class="n">func1</span><span class="p">.</span><span class="n">m</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -11793,7 +11816,7 @@ Error: Function definitions are not permitted in this context.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">func1</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -11822,7 +11845,7 @@ Error: Function definitions are not permitted in this context.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">func1</span><span class="p">([</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">])</span>
@@ -11851,12 +11874,25 @@ Error: Function definitions are not permitted in this context.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">open</span> <span class="n">func2</span><span class="p">.</span><span class="n">m</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="k">function</span><span class="w"> </span>[z1, z2]<span class="p">=</span><span class="nf">func2</span><span class="p">(</span>x,y<span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">z1</span><span class="p">=</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
-    <span class="n">z2</span><span class="p">=</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="k">function</span><span class="w"> </span>[p, q]<span class="p">=</span><span class="nf">func2</span><span class="p">(</span>x,y<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">p</span><span class="p">=</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">q</span><span class="p">=</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
 <span class="k">end</span>
 </pre></div>
 
@@ -11867,10 +11903,10 @@ Error: Function definitions are not permitted in this context.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]=</span><span class="n">func2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">q1</span><span class="p">]=</span><span class="n">func2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11883,12 +11919,12 @@ Error: Function definitions are not permitted in this context.</p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a =
+<pre>p1 =
 
     13
 
 
-b =
+q1 =
 
      5
 </pre>
@@ -11901,11 +11937,11 @@ b =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="n">B</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
-<span class="p">[</span><span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">]</span> <span class="p">=</span> <span class="n">func2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+<span class="p">[</span><span class="n">p2</span><span class="p">,</span> <span class="n">q2</span><span class="p">]</span> <span class="p">=</span> <span class="n">func2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11918,12 +11954,12 @@ b =
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a1 =
+<pre>p2 =
 
      5    13
 
 
-b1 =
+q2 =
 
      3     5
 </pre>
@@ -11936,10 +11972,50 @@ b1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">phi</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">)</span> <span class="nb">cosh</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span> <span class="n">B</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="p">[</span><span class="n">p3</span><span class="p">,</span> <span class="n">q3</span><span class="p">]</span> <span class="p">=</span> <span class="n">func2</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>p3 =
+
+     5    13
+    25    41
+
+
+q3 =
+
+     3     5
+     7     9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="k">function</span><span class="w"> </span>[p, q]<span class="p">=</span><span class="nf">func2</span><span class="p">(</span>x,y<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">p</span><span class="p">=</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">q</span><span class="p">=</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+<span class="k">end</span>
 </pre></div>
 
 </div>
@@ -11949,10 +12025,25 @@ b1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">phi</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">phi</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">phi</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">phi</span><span class="p">([</span><span class="mi">0</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">2</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">phi</span><span class="p">([</span><span class="mi">0</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">2</span> <span class="mi">3</span><span class="p">;</span><span class="mi">4</span> <span class="mi">5</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -11967,7 +12058,18 @@ b1 =
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>ans =
 
-     1
+     2
+
+
+ans =
+
+     2     4
+
+
+ans =
+
+     2     4
+     6     8
 </pre>
 </div>
 </div>
@@ -11993,7 +12095,7 @@ b1 =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -12016,6 +12118,19 @@ b1 =
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span>
+</pre></div>
+
+</div>
 </div>
 </div>
 
