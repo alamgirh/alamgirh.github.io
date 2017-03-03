@@ -9,7 +9,7 @@ body {
 .Header {  
   height: 85px;  
   max-width: 1000px;  
-  min-width: 500px;  
+  min-width: 100px;  
   background-color: white;
   margin-left: auto;  
   margin-right: auto;
@@ -19,7 +19,7 @@ body {
 .Footer {  
   height: 25px;  
   max-width: 1000px;  
-  min-width: 500px;  
+  min-width: 100px;  
   background-color: white;
   margin-left: auto;  
   margin-right: auto;
@@ -69,7 +69,7 @@ h4 {
 
 .BodyContainer {  
   max-width: 1000px;  
-  min-width: 1000px;  
+  min-width: 100px;  
   margin-left: auto;  
   margin-right: auto;  
   background-color: white;  
