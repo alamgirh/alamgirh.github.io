@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html><head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <title>M. Alamgir Hossain, Department of Mathematics, SFU</title>
+    <title>M. Alamgir Hossain</title>
     <meta content="M. Alamgir Hossain" name="author">
     <meta content="Personal Home Page" name="description">
     <link title="style_mah.css" href="files/style_mah.css" rel="stylesheet" type="text/css">
-
     <body>
 
     <div class="Header"> <br><a href="http://www.sfu.ca/"><img style="width: 300px; height: 50px;" alt="SFU logo" src="files/sfu_logo.png"></a>
 <div style="text-align:right; margin-right:10px;">
-	<div style="font-family: verdana; color: #a6192e; font-size: 18px;"><b>M. Alamgir Hossain</b></div>
-Ph.D Student<br>
+	<div style="font-family: verdana; color: #a6192e; font-size: 18px;"><b>M. Alamgir Hossain, Ph.D.</b></div>
+Research Support<br>
 Department of Mathematics
 </div>
     </div>
@@ -61,38 +60,86 @@ within glaciology has been limited. Predictions of future sea-level, determined 
 
 <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
 	<p style="background:rgb(230,230,230) none repeat scroll 0% 0%;margin:0in -0.2in 0pt;line-height:150%">
-	  <b>Development of Numerical Methods</b></p>
+
+<b>Development of Numerical Methods</b></p>
 <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
+
+
 <p style="text-align:justify">
 We have developed a novel computational methodology to elucidate two dimensional fluid flows. This numerical method is a weighted residual collocation method based on the multiscale wavelet decomposition. Numerical scheme for the study of non-hydrostatic atmospheric model is always a challenging issue to minimize the artificial dissipation. The governing equations of atmospheric flows are filtered with a Deslauriers-Dubuc (DD) wavelet system. The DD wavelet results in a non-dissipative advection scheme. Most nonhydrostatic Numerical Weather Prediction (NWP) models use forward-in-time integration schemes. For time integration of the governing equations, a fully implicit numerical scheme is used in this model. Forward-in-time integration schemes are restricted by Courant-Friedrichs-Lewy (CFL) number. However, this model is not restricted with CFL number. We have developed this model for investigating nonhydrostatic mesoscale atmospheric phenomena e.g. penetrative turbulence in atmospheric boundary layer.
 <!--We are interested to extend this numerical methodology to three-dimensional fluid flows. However, an advanced data structure, a parallel computing algorithm and a multilevel solution methodology are needed for three- dimensional simulations. This work is currently underway.--> </p>
+<p style="text-align:center">
+  <figure>
+  <figure1>
+    <img src="files/research/scaling3.jpg" alt="Scaling function" style="width: 340px;">
+    <figcaption>Fig. Scaling function of Deslauriers-Dubuc (DD) wavelets </figcaption>
+  </figure1>
+  </figure> 
+  </p>
 <li style="margin:0in 0in 0pt;text-align:justify">J. M. Alam, R. P. Walsh, <b>M. A. Hossain</b>, and A. M. Rose (2014) - A computational methodology for two-dimensional fluid flows; International&nbsp;Journal for Numerical Methods in Fluids, 75(12): 835-859. </li>
 
 <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
 	<p style="background:rgb(230,230,230) none repeat scroll 0% 0%;margin:0in -0.2in 0pt;line-height:150%">
 	  <b>Atmospheric Dynamics</b></p>
 <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
+
+
       <p style="text-align:justify">
 	My atmospheric research concentrates on the penetration of turbulent structures of the dry atmosphere. Generally speaking, the atmosphere contains a stratified fluid, where the lowest region that is in contact with the surface (known as atmospheric boundary layer (ABL)) is mainly characterized by turbulence. The ABL turbulence is primarily induced by surface heating and wind shear, and is influenced by the diurnal cycle. In the daytime, turbulence is driven by convective destabilization, but in the night-time, wind shear is a primary mechanism to trigger turbulence. The free troposphere above the ABL is usually stably stratified. The ABL turbulence may penetrate into the free troposphere through entertainment of air from the overlying stably stratified region into the fully turbulent boundary layer. This process transports momentum and energy from the mixed region to the free troposphere, which affects boundary layer clouds (crucial for the global climate change) and may trigger clear air turbulence in the free troposphere (crucial for aviation safety).</p>
       <p style="text-align:justify"> We have investigated the penetrative turbulence in the ABL in two ways. Firstly, penetration of an isolated buoyant element, which penetrates upwards into the surrounding stable atmosphere, is investigated. Secondly, a turbulent convective air covers a large horizontal area due to the differential heating is investigated. This phenomenon is observed during the daytime when the sun heats the earth’s surface. This surface heating leads to a convective motion which also leads to significant turbulence that mixes the air within the above stable layer. Moreover, such penetrative convection for both forms in the stable atmosphere generate gravity waves. <!--I am interested to extend this model for moist atmospheric flow in any complex terrain.--></p>
+      
+      <p style="text-align:center">
+        <figure>
+        <figure1>
+          <img src="files/research/thermal-rising.jpg" alt="rising thermal" style="width: 340px;">
+          <figcaption>Fig. A rising thermal</figcaption>
+        </figure1>
+        </figure> 
+        </p>
+        
       <li style="margin:0in 0in 0pt;text-align:justify"><b>M. Alamgir Hossain</b> and J. M. Alam (2015) - Flow regimes of mesoscale circulations forced by inhomogeneous surface heating, Proceedings of the 23 rd Annual Conference of the Computational Fluid Dynamics Society of Canada, CFDSC 2015. </li>
       
       <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
 	<p style="background:rgb(230,230,230) none repeat scroll 0% 0%;margin:0in -0.2in 0pt;line-height:150%">
 	  <b>Leakage in Pipelines</b></p>
 <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
-      <p style="text-align:justify">
-	Monitoring the surrounding pipeline temperature through fibre optic sensors is an efficient technology for detecting leakage of fluid: oil and gas, from pipelines. We have developed a computational model of temperature monitoring in such a leak detection system. A longitudinal cross section of an idealized pipe-in- pipe flow-line has been simulated, where a localized thermal source is placed on the lower boundary of the computational domain. The heat transfer rates and temperature profiles of the localized heat source have been investigated because a detailed understanding of the excess temperature surrounding a pipeline is essential to design efficient leak detection systems based on the active thermometry method. From these excess temperature profiles, a sensor cable collects the signal and send to the main monitor. As a result, it is very easy to find the leak and fix it. We need to see the larger intensity of localized heat sources which may create irregular flow behaviours or turbulent flow at the localized heat source and, leak detection system in the monitoring pipe which are called for future investigation.</p>
 
-      <li style="margin:0in 0in 0pt;text-align:justify">A. S. Bhuiyan, <b>M. Alamgir Hossain</b> and J. M. Alam (2016) - A Computational Model of Thermal Monitoring at a Leakage in Pipelines, International Journal of Heat and Mass Transfer 92: 330-338, 2016. </li>
+
+<p style="text-align:justify">
+Monitoring the surrounding pipeline temperature through fibre optic sensors is an efficient technology for detecting leakage of fluid: oil and gas, from pipelines. We have developed a computational model of temperature monitoring in such a leak detection system. A longitudinal cross section of an idealized pipe-in- pipe flow-line has been simulated, where a localized thermal source is placed on the lower boundary of the computational domain. The heat transfer rates and temperature profiles of the localized heat source have been investigated because a detailed understanding of the excess temperature surrounding a pipeline is essential to design efficient leak detection systems based on the active thermometry method. From these excess temperature profiles, a sensor cable collects the signal and send to the main monitor. As a result, it is very easy to find the leak and fix it. We need to see the larger intensity of localized heat sources which may create irregular flow behaviours or turbulent flow at the localized heat source and, leak detection system in the monitoring pipe which are called for future investigation.</p>
+
+<p style="text-align:center">
+  <figure>
+  <figure1>
+    <img src="files/research/pipelines.jpg" alt="Excess temperature profiles" style="width: 340px;">
+    <figcaption>Fig. Excess temperature profiles where we placed the sensor cable</figcaption>
+  </figure1>
+  </figure> 
+  </p>
+        
+<li style="margin:0in 0in 0pt;text-align:justify">A. S. Bhuiyan, <b>M. Alamgir Hossain</b> and J. M. Alam (2016) - A Computational Model of Thermal Monitoring at a Leakage in Pipelines, International Journal of Heat and Mass Transfer 92: 330-338, 2016. </li>
       
       <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
 	<p style="background:rgb(230,230,230) none repeat scroll 0% 0%;margin:0in -0.2in 0pt;line-height:150%">
 	  <b>Composite Numerical Integration</b></p>
 <p style="margin:0in 0in 0pt;text-align:justify"><span>&nbsp;</span></p>
-      <p style="text-align:justify">
-	Double integrals over an arbitrary polygon have been evaluated exploiting finite element method. The physical region (e.g. quadrilateral, polygon etc.) with m-sides is decomposed into (m − 2) triangles. Then each triangle is transformed into a standard triangular finite element using the basis functions in local space. Then the standard triangle is decomposed into 4 × n<sup>2</sup> right isosceles triangles with side lengths 1/n, and thus composite numerical integration is employed. In addition, the affine transformation over each decomposed triangle and the use of linearity property of integrals are applied. Finally, each isosceles triangle is transformed into a 2-sqare finite element to compute new s<sup>2</sup> sampling points and corresponding weight coefficients, using s points conventional Gauss-Legendre quadratures, which are applied again to evaluate the double integral.
-	<!--<br><br><br><span style="color:rgb(0,0,255)">Initial Value Problem</span><br>A method has been formulated for solution of initial value problem of the differential equation dy/dx = f (x, y). Then it has been converted the equation into an integral equation which involves integration of f (x, y). In this method, it has been evaluated the integrals for f (x, y) combining Gauss Legendre Quadrature 8 of 11rule, finite element technique, and Taylors series expansion for y(x). Finally a corrector-predictor approximation has been adopted to improve the values of y(x). --></p>
+      
+
+<p style="text-align:justify">
+Double integrals over an arbitrary polygon have been evaluated exploiting finite element method. The physical region (e.g. quadrilateral, polygon etc.) with m-sides is decomposed into (m − 2) triangles. Then each triangle is transformed into a standard triangular finite element using the basis functions in local space. Then the standard triangle is decomposed into 4 × n<sup>2</sup> right isosceles triangles with side lengths 1/n, and thus composite numerical integration is employed. In addition, the affine transformation over each decomposed triangle and the use of linearity property of integrals are applied. Finally, each isosceles triangle is transformed into a 2-sqare finite element to compute new s<sup>2</sup> sampling points and corresponding weight coefficients, using s points conventional Gauss-Legendre quadratures, which are applied again to evaluate the double integral.</p>
+
+<p style="text-align:center">
+  <figure>
+  <figure1>
+    <img src="files/research/triangle.jpg" alt="Discretization of a triangle" style="width: 340px;">
+    <figcaption>Fig. Discretization of a triangle into 4 × n<sup>2</sup> sub-triangles.</figcaption>
+  </figure1>
+  </figure> 
+  </p>
+  
+
+<!--<img style="width: 500px;" title="Discretization of a triangle into 4 n^2 sub-triangles" src="files/research/triangle.jpg"> -->
+<!--<br><br><br><span style="color:rgb(0,0,255)">Initial Value Problem</span><br>A method has been formulated for solution of initial value problem of the differential equation dy/dx = f (x, y). Then it has been converted the equation into an integral equation which involves integration of f (x, y). In this method, it has been evaluated the integrals for f (x, y) combining Gauss Legendre Quadrature 8 of 11rule, finite element technique, and Taylors series expansion for y(x). Finally a corrector-predictor approximation has been adopted to improve the values of y(x). -->
 <li style="margin:0in 0in 0pt;text-align:justify">Md. Shafiqul Islam and <b>M. Alamgir Hossain</b> (2009)- Numerical Integrations over an Arbitrary Quadrilateral Region, Applied Mathematics and Computations (Elsevier) Volume 210, Issue 2, 15 April 2009, Pages 515-524. </li>
 
 <br><br>
